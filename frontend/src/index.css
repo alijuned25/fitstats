@@ -1,0 +1,8032 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+nav {
+  height: 70px;
+  padding: 20px;
+  background-color: #111;
+  color: white;
+}
+
+.app-layout {
+  display: flex;
+  min-height: calc(100vh - 70px);
+}
+
+aside {
+  width: 220px;
+  padding: 20px;
+  background-color: #222;
+  color: white;
+}
+
+aside h2 {
+  margin-bottom: 20px;
+}
+
+aside ul {
+  list-style: none;
+}
+
+aside li {
+  margin-bottom: 15px;
+}
+
+aside a {
+  color: white;
+  text-decoration: none;
+}
+
+aside a:hover {
+  text-decoration: underline;
+}
+
+.page-content {
+  flex: 1;
+  padding: 30px;
+}
+
+main h2 {
+  margin-bottom: 10px;
+}
+
+/* =========================
+   WORKOUT PAGE
+========================= */
+
+.workout-page {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.page-title {
+  margin-bottom: 30px;
+}
+
+.page-title h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.page-title p {
+  color: #666;
+}
+
+
+/* =========================
+   SPLIT SELECTOR
+========================= */
+
+.split-selector {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.split-selector h2 {
+  margin-bottom: 8px;
+}
+
+.split-description {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.split-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.split-buttons button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  background-color: #111;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.split-buttons button:hover {
+  background-color: #333;
+}
+
+
+/* =========================
+   WORKOUT PLAN
+========================= */
+
+.workout-header {
+  margin-bottom: 20px;
+}
+
+.workout-header h2 {
+  margin-bottom: 5px;
+}
+
+.workout-header p {
+  color: #666;
+}
+
+
+/* =========================
+   WORKOUT DAY
+========================= */
+
+.workout-day {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.day-header {
+  margin-bottom: 20px;
+}
+
+.day-header span {
+  font-size: 12px;
+  font-weight: bold;
+  color: #777;
+}
+
+.day-header h3 {
+  font-size: 24px;
+  margin: 5px 0;
+}
+
+.day-header p {
+  color: #666;
+}
+
+
+/* =========================
+   EXERCISE CARD
+========================= */
+
+.exercise-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.exercise-info h4 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.exercise-details {
+  display: flex;
+  gap: 30px;
+}
+
+.exercise-details span {
+  display: flex;
+  flex-direction: column;
+}
+
+.exercise-details strong {
+  font-size: 16px;
+}
+
+.exercise-details small {
+  color: #777;
+  margin-top: 3px;
+}
+
+
+/* =========================
+   WORKOUT PAGE
+========================= */
+
+.workout-page {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.page-title {
+  margin-bottom: 30px;
+}
+
+.page-title h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.page-title p {
+  color: #666;
+}
+
+
+/* =========================
+   SPLIT SELECTOR
+========================= */
+
+.split-selector {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.split-selector h2 {
+  margin-bottom: 8px;
+}
+
+.split-description {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.split-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.split-buttons button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  background-color: #111;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.split-buttons button:hover {
+  background-color: #333;
+}
+
+
+/* =========================
+   WORKOUT PLAN
+========================= */
+
+.workout-header {
+  margin-bottom: 20px;
+}
+
+.workout-header h2 {
+  margin-bottom: 5px;
+}
+
+.workout-header p {
+  color: #666;
+}
+
+
+/* =========================
+   WORKOUT DAY
+========================= */
+
+.workout-day {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.day-header {
+  margin-bottom: 20px;
+}
+
+.day-header span {
+  font-size: 12px;
+  font-weight: bold;
+  color: #777;
+}
+
+.day-header h3 {
+  font-size: 24px;
+  margin: 5px 0;
+}
+
+.day-header p {
+  color: #666;
+}
+
+
+/* =========================
+   EXERCISE CARD
+========================= */
+
+.exercise-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.exercise-info h4 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.exercise-details {
+  display: flex;
+  gap: 30px;
+}
+
+.exercise-details span {
+  display: flex;
+  flex-direction: column;
+}
+
+.exercise-details strong {
+  font-size: 16px;
+}
+
+.exercise-details small {
+  color: #777;
+  margin-top: 3px;
+}
+
+
+/* =========================
+   COMPLETE BUTTON
+========================= */
+
+.complete-button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 7px;
+  background-color: #111;
+  color: white;
+  cursor: pointer;
+}
+
+.complete-button:hover {
+  background-color: #333;
+}
+
+/* =========================
+   WORKOUT PROGRESS
+========================= */
+
+.progress-container {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #e5e5e5;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #111;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+.progress-container > p {
+  margin-top: 8px;
+  color: #666;
+  font-size: 14px;
+}
+
+
+/* =========================
+   COMPLETED EXERCISE
+========================= */
+
+.exercise-card.completed {
+  opacity: 0.65;
+}
+
+.exercise-card.completed h4 {
+  text-decoration: line-through;
+}
+
+.complete-button:disabled {
+  cursor: default;
+}
+
+/* =========================
+   WEIGHT INPUT
+========================= */
+
+.weight-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.weight-input label {
+  font-size: 14px;
+  color: #666;
+}
+
+.weight-input input {
+  width: 120px;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.weight-input input:focus {
+  outline: none;
+  border-color: #111;
+}
+
+/* =========================
+   DAY COMPLETION
+========================= */
+
+.day-completion {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.day-complete-button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 7px;
+  background-color: #111;
+  color: white;
+  cursor: pointer;
+}
+
+.day-complete-button:hover {
+  background-color: #333;
+}
+
+.day-complete-button:disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+
+
+/* =========================
+   RESET WORKOUT
+========================= */
+
+.reset-workout-button {
+  margin-bottom: 25px;
+  padding: 9px 16px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  background: white;
+  cursor: pointer;
+}
+
+.reset-workout-button:hover {
+  background: #f0f0f0;
+}
+
+/* =========================
+   MONTHLY PLANNER
+========================= */
+
+.planner-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-top: 80px;
+  box-sizing: border-box;
+}
+
+.calendar-container {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================
+   CALENDAR HEADER
+========================= */
+
+.calendar-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 40px;
+  margin-bottom: 25px;
+}
+
+.calendar-header h2 {
+  font-size: 24px;
+}
+
+.calendar-header button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 7px;
+  background: #111;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.calendar-header button:hover {
+  background: #333;
+}
+
+
+/* =========================
+   WEEKDAYS
+========================= */
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.calendar-weekdays span {
+  text-align: center;
+  font-weight: bold;
+  color: #666;
+  padding: 10px;
+}
+
+
+/* =========================
+   CALENDAR GRID
+========================= */
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.calendar-empty {
+  min-height: 70px;
+}
+
+
+/* =========================
+   CALENDAR DAY
+========================= */
+
+.calendar-day {
+  min-height: 70px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.calendar-day:hover {
+  background: #f5f5f5;
+}
+
+.calendar-day.today {
+  border: 2px solid #111;
+  font-weight: bold;
+}
+
+.calendar-day.selected {
+  background: #111;
+  color: white;
+}
+
+
+/* =========================
+   SELECTED DATE
+========================= */
+
+.selected-date {
+  margin-top: 25px;
+  padding: 18px;
+  border-radius: 8px;
+  background: #f5f5f5;
+}
+
+.selected-date h3 {
+  margin-bottom: 5px;
+}
+
+.selected-date p {
+  color: #666;
+}
+
+
+/* =========================
+   TASKS
+========================= */
+
+.task-container {
+  margin-top: 25px;
+  padding: 20px;
+  background: #f8f8f8;
+  border-radius: 10px;
+}
+
+.task-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.task-header h3 {
+  font-size: 20px;
+}
+
+.task-header span {
+  color: #777;
+  font-size: 14px;
+}
+
+
+/* =========================
+   ADD TASK
+========================= */
+
+.add-task {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.add-task input {
+  flex: 1;
+  padding: 11px 12px;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+  font-size: 14px;
+}
+
+.add-task input:focus {
+  outline: none;
+  border-color: #111;
+}
+
+.add-task button {
+  padding: 11px 16px;
+  border: none;
+  border-radius: 7px;
+  background: #111;
+  color: white;
+  cursor: pointer;
+}
+
+.add-task button:hover {
+  background: #333;
+}
+
+
+/* =========================
+   TASK ITEM
+========================= */
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px;
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 7px;
+}
+
+.task-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.task-content input {
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+}
+
+.task-content span {
+  font-size: 15px;
+}
+
+
+/* =========================
+   COMPLETED TASK
+========================= */
+
+.task-item.task-completed {
+  opacity: 0.6;
+}
+
+.task-item.task-completed .task-content span {
+  text-decoration: line-through;
+}
+
+
+/* =========================
+   DELETE TASK
+========================= */
+
+.delete-task {
+  border: none;
+  background: transparent;
+  color: #777;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 2px 8px;
+}
+
+.delete-task:hover {
+  color: #111;
+}
+
+
+/* =========================
+   NO TASKS
+========================= */
+
+.no-tasks {
+  color: #777;
+  font-size: 14px;
+  padding: 10px 0;
+}
+
+/* =========================
+   TASK ACTIONS
+========================= */
+
+.task-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.edit-task-button {
+  border: none;
+  background: transparent;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.edit-task-button:hover {
+  background: #f0f0f0;
+}
+
+
+/* =========================
+   EDIT TASK
+========================= */
+
+.edit-task {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.edit-task input {
+  flex: 1;
+  padding: 9px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.edit-task input:focus {
+  outline: none;
+  border-color: #111;
+}
+
+.save-task,
+.cancel-task {
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.save-task {
+  border: none;
+  background: #111;
+  color: white;
+}
+
+.save-task:hover {
+  background: #333;
+}
+
+.cancel-task {
+  border: 1px solid #ccc;
+  background: white;
+}
+
+.cancel-task:hover {
+  background: #f0f0f0;
+}
+
+
+/* =========================
+   CALENDAR TASK INDICATOR
+========================= */
+
+.calendar-day {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 10px;
+}
+
+.calendar-day-number {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.calendar-task-info {
+  margin-top: 8px;
+  font-size: 11px;
+  color: #666;
+}
+
+.calendar-day.selected .calendar-task-info {
+  color: white;
+}
+
+/* =========================================================
+   PROFESSIONAL TASK SYSTEM
+========================================================= */
+
+
+/* =========================
+   TASK CONTAINER
+========================= */
+
+.task-container {
+  margin-top: 28px;
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+}
+
+
+/* =========================
+   TASK HEADER
+========================= */
+
+.task-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.task-header h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.task-header p {
+  margin: 5px 0 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.task-count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 55px;
+  padding: 7px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #f9fafb;
+}
+
+.task-count strong {
+  font-size: 18px;
+  line-height: 20px;
+  color: #111827;
+}
+
+.task-count span {
+  font-size: 10px;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================
+   ADD TASK CARD
+========================= */
+
+.add-task-card {
+  margin-bottom: 22px;
+  padding: 18px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+.add-task-title {
+  margin-bottom: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+}
+
+
+/* =========================
+   ADD TASK INPUT
+========================= */
+
+.add-task-input-row {
+  display: flex;
+  gap: 10px;
+}
+
+.add-task-input-row input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #111827;
+  font-size: 14px;
+  transition: border-color 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.add-task-input-row input::placeholder {
+  color: #9ca3af;
+}
+
+.add-task-input-row input:focus {
+  outline: none;
+  border-color: #111827;
+  box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.08);
+}
+
+
+/* =========================
+   ADD BUTTON
+========================= */
+
+.add-task-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 17px;
+  border: none;
+  border-radius: 9px;
+  background: #111827;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease,
+              background 0.2s ease;
+}
+
+.add-task-button span {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.add-task-button:hover {
+  background: #1f2937;
+}
+
+.add-task-button:active {
+  transform: scale(0.98);
+}
+
+
+/* =========================
+   CATEGORY SECTION
+========================= */
+
+.category-section {
+  margin-top: 15px;
+}
+
+.category-label {
+  display: block;
+  margin-bottom: 9px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.category-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+
+/* =========================
+   CATEGORY OPTION
+========================= */
+
+.category-option {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 11px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #4b5563;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.category-option:hover {
+  border-color: #9ca3af;
+  background: #f3f4f6;
+}
+
+.category-option.active {
+  border-color: #111827;
+  background: #111827;
+  color: #ffffff;
+}
+
+.category-icon {
+  font-size: 14px;
+}
+
+
+/* =========================
+   TASK LIST
+========================= */
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+/* =========================
+   TASK ITEM
+========================= */
+
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  min-height: 62px;
+  padding: 12px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 11px;
+  background: #ffffff;
+  transition: border-color 0.2s ease,
+              box-shadow 0.2s ease,
+              background 0.2s ease;
+}
+
+.task-item:hover {
+  border-color: #d1d5db;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================
+   TASK MAIN
+========================= */
+
+.task-main {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+
+/* =========================
+   CUSTOM CHECKBOX
+========================= */
+
+.task-checkbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.task-checkbox input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid #d1d5db;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.task-checkbox:hover .custom-checkbox {
+  border-color: #6b7280;
+}
+
+.task-checkbox input:checked
++ .custom-checkbox {
+  border-color: #111827;
+  background: #111827;
+}
+
+
+/* =========================
+   TASK DETAILS
+========================= */
+
+.task-details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.task-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #111827;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+/* =========================
+   TASK CATEGORY BADGE
+========================= */
+
+.task-category-badge {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 4px;
+  padding: 3px 7px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+
+/* Category variations */
+
+.category-workout {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.category-diet {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.category-water {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.category-cardio {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.category-personal {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+
+/* =========================
+   COMPLETED TASK
+========================= */
+
+.task-item.task-completed {
+  background: #fafafa;
+}
+
+.task-item.task-completed .task-title {
+  color: #9ca3af;
+  text-decoration: line-through;
+}
+
+
+/* =========================
+   TASK ACTIONS
+========================= */
+
+.task-actions {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.edit-task-button {
+  padding: 6px 9px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #6b7280;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.edit-task-button:hover {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+.delete-task {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #9ca3af;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.delete-task:hover {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty-task-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 35px 20px;
+  border: 1px dashed #d1d5db;
+  border-radius: 11px;
+  text-align: center;
+}
+
+.empty-task-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  background: #f3f4f6;
+  color: #6b7280;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.empty-task-state h4 {
+  margin: 0 0 5px;
+  color: #374151;
+  font-size: 14px;
+}
+
+.empty-task-state p {
+  margin: 0;
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+
+/* =========================
+   EDIT TASK
+========================= */
+
+.edit-task {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
+.edit-task > input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+  font-size: 14px;
+}
+
+.edit-task > input:focus {
+  outline: none;
+  border-color: #111827;
+}
+
+
+/* =========================
+   EDIT CATEGORY OPTIONS
+========================= */
+
+.edit-category-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.edit-category-button {
+  padding: 6px 9px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #6b7280;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.edit-category-button:hover {
+  background: #f3f4f6;
+}
+
+.edit-category-button.active {
+  border-color: #111827;
+  background: #111827;
+  color: #ffffff;
+}
+
+
+/* =========================
+   EDIT ACTIONS
+========================= */
+
+.edit-actions {
+  display: flex;
+  gap: 7px;
+}
+
+.save-task,
+.cancel-task {
+  padding: 7px 13px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.save-task {
+  border: none;
+  background: #111827;
+  color: #ffffff;
+}
+
+.save-task:hover {
+  background: #1f2937;
+}
+
+.cancel-task {
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: #6b7280;
+}
+
+.cancel-task:hover {
+  background: #f3f4f6;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+  .task-container {
+    padding: 17px;
+  }
+
+  .add-task-input-row {
+    flex-direction: column;
+  }
+
+  .add-task-button {
+    min-height: 42px;
+  }
+
+  .category-options {
+    gap: 6px;
+  }
+
+  .category-option {
+    padding: 7px 9px;
+  }
+
+  .task-item {
+    align-items: flex-start;
+  }
+
+  .task-actions {
+    margin-top: 2px;
+  }
+
+}
+
+/* =========================================================
+   MONTHLY PLANNER PROGRESS
+========================================================= */
+
+.planner-progress {
+  margin-bottom: 25px;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #f9fafb;
+}
+
+
+/* =========================
+   PROGRESS HEADER
+========================= */
+
+.planner-progress-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.planner-progress-header h3 {
+  margin: 0;
+  color: #111827;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.planner-progress-header p {
+  margin: 4px 0 0;
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.planner-progress-percentage {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+}
+
+
+/* =========================
+   PROGRESS BAR
+========================= */
+
+.planner-progress-bar {
+  width: 100%;
+  height: 8px;
+  overflow: hidden;
+  margin-bottom: 18px;
+  border-radius: 20px;
+  background: #e5e7eb;
+}
+
+.planner-progress-fill {
+  height: 100%;
+  border-radius: 20px;
+  background: #111827;
+  transition: width 0.3s ease;
+}
+
+
+/* =========================
+   PROGRESS STATS
+========================= */
+
+.planner-progress-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.planner-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+}
+
+.planner-stat-value {
+  color: #111827;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.planner-stat-label {
+  margin-top: 3px;
+  color: #9ca3af;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .planner-progress {
+    padding: 16px;
+  }
+
+  .planner-progress-header {
+    align-items: flex-start;
+  }
+
+  .planner-progress-percentage {
+    font-size: 19px;
+  }
+
+  .planner-progress-stats {
+    gap: 6px;
+  }
+
+  .planner-stat {
+    padding: 8px 5px;
+  }
+
+}
+
+/* =========================================================
+   ACTIVITY STATISTICS
+========================================================= */
+
+.planner-stats {
+  margin-bottom: 25px;
+}
+
+.planner-stats-header {
+  margin-bottom: 14px;
+}
+
+.planner-stats-header h3 {
+  margin: 0;
+  color: #111827;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.planner-stats-header p {
+  margin: 4px 0 0;
+  color: #6b7280;
+  font-size: 12px;
+}
+
+
+/* =========================
+   STAT GRID
+========================= */
+
+.planner-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+
+/* =========================
+   STAT CARD
+========================= */
+
+.planner-stat-card {
+  padding: 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 11px;
+  background: #ffffff;
+  transition: box-shadow 0.2s ease,
+              border-color 0.2s ease;
+}
+
+.planner-stat-card:hover {
+  border-color: #d1d5db;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================
+   STAT TOP
+========================= */
+
+.planner-stat-top {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 13px;
+}
+
+.planner-stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: #f3f4f6;
+  font-size: 17px;
+}
+
+.planner-stat-info {
+  min-width: 0;
+}
+
+.planner-stat-info h4 {
+  margin: 0;
+  color: #111827;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.planner-stat-info span {
+  display: block;
+  margin-top: 2px;
+  color: #9ca3af;
+  font-size: 10px;
+}
+
+
+/* =========================
+   STAT PROGRESS
+========================= */
+
+.planner-stat-progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.planner-stat-progress-bar {
+  flex: 1;
+  height: 5px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #e5e7eb;
+}
+
+.planner-stat-progress-fill {
+  height: 100%;
+  border-radius: 10px;
+  background: #111827;
+  transition: width 0.3s ease;
+}
+
+.planner-stat-progress > span {
+  min-width: 28px;
+  color: #6b7280;
+  font-size: 10px;
+  text-align: right;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  .planner-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .planner-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 400px) {
+
+  .planner-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+/* =========================================================
+   CALCULATOR
+========================================================= */
+
+.calculator-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   PAGE HEADER
+========================= */
+
+.calculator-page-header {
+  margin-bottom: 25px;
+}
+
+.calculator-eyebrow {
+  display: inline-block;
+  margin-bottom: 7px;
+  color: #6b7280;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.calculator-page-header h1 {
+  margin: 0;
+  color: #111827;
+  font-size: 32px;
+  font-weight: 750;
+}
+
+.calculator-page-header p {
+  margin: 8px 0 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+
+/* =========================
+   MAIN LAYOUT
+========================= */
+
+.calculator-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(350px, 0.85fr);
+  gap: 22px;
+  align-items: start;
+}
+
+
+/* =========================
+   CALCULATOR CARD
+========================= */
+
+.calculator-card {
+  padding: 25px;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+
+/* =========================
+   CALCULATOR SECTION
+========================= */
+
+.calculator-section {
+  margin-bottom: 27px;
+}
+
+.calculator-section:last-of-type {
+  margin-bottom: 20px;
+}
+
+.calculator-section-title {
+  margin-bottom: 16px;
+}
+
+.calculator-section-title h3 {
+  margin: 0;
+  color: #111827;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.calculator-section-title p {
+  margin: 5px 0 0;
+  color: #6b7280;
+  font-size: 12px;
+}
+
+
+/* =========================
+   FORM GROUP
+========================= */
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 7px;
+  color: #374151;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.form-group input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 11px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #111827;
+  font-size: 14px;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #111827;
+  box-shadow:
+    0 0 0 3px rgba(17, 24, 39, 0.07);
+}
+
+
+/* =========================
+   FORM ROW
+========================= */
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+
+/* =========================
+   INPUT UNIT
+========================= */
+
+.input-with-unit {
+  position: relative;
+}
+
+.input-with-unit input {
+  padding-right: 45px;
+}
+
+.input-with-unit span {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+
+/* =========================
+   GENDER
+========================= */
+
+.gender-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.gender-option {
+  padding: 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #6b7280;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.gender-option:hover {
+  background: #f9fafb;
+}
+
+.gender-option.active {
+  border-color: #111827;
+  background: #111827;
+  color: #ffffff;
+}
+
+
+/* =========================
+   ACTIVITY OPTIONS
+========================= */
+
+.activity-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.activity-option {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 12px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 9px;
+  background: #ffffff;
+  text-align: left;
+  cursor: pointer;
+}
+
+.activity-option:hover {
+  background: #f9fafb;
+}
+
+.activity-option.active {
+  border-color: #111827;
+  background: #111827;
+  color: #ffffff;
+}
+
+.activity-name {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.activity-description {
+  margin-top: 3px;
+  color: #9ca3af;
+  font-size: 11px;
+}
+
+.activity-option.active
+.activity-description {
+  color: #d1d5db;
+}
+
+
+/* =========================
+   GOAL OPTIONS
+========================= */
+
+.goal-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.goal-option {
+  min-height: 85px;
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 9px;
+  background: #ffffff;
+  text-align: left;
+  cursor: pointer;
+}
+
+.goal-option:hover {
+  background: #f9fafb;
+}
+
+.goal-option.active {
+  border-color: #111827;
+  background: #111827;
+  color: #ffffff;
+}
+
+.goal-title {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.goal-description {
+  display: block;
+  margin-top: 5px;
+  color: #9ca3af;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.goal-option.active
+.goal-description {
+  color: #d1d5db;
+}
+
+
+/* =========================
+   CALCULATE BUTTON
+========================= */
+
+.calculate-button {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 9px;
+  background: #111827;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease;
+}
+
+.calculate-button:hover {
+  background: #1f2937;
+}
+
+.calculate-button:active {
+  transform: scale(0.99);
+}
+
+
+/* =========================
+   EMPTY RESULTS
+========================= */
+
+.calculator-empty-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  padding: 30px;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  background: #f9fafb;
+  text-align: center;
+}
+
+.calculator-empty-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 15px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  font-size: 20px;
+}
+
+.calculator-empty-results h3 {
+  margin: 0;
+  color: #111827;
+  font-size: 18px;
+}
+
+.calculator-empty-results p {
+  max-width: 280px;
+  margin: 8px 0 0;
+  color: #6b7280;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+
+/* =========================
+   RESULTS
+========================= */
+
+.results-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.results-header {
+  margin-bottom: 2px;
+}
+
+.results-header h2 {
+  margin: 0;
+  color: #111827;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.results-header p {
+  margin: 5px 0 0;
+  color: #6b7280;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+
+/* =========================
+   BMI PRIMARY CARD
+========================= */
+
+.result-primary-card {
+  padding: 22px;
+  border-radius: 14px;
+  background: #111827;
+  color: #ffffff;
+}
+
+.result-primary-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.result-primary-card .result-label {
+  color: #d1d5db;
+}
+
+.bmi-value {
+  margin-top: 5px;
+  font-size: 38px;
+  font-weight: 750;
+  line-height: 1;
+}
+
+.bmi-category {
+  margin-top: 8px;
+  padding: 4px 9px;
+  border-radius: 5px;
+  background: #374151;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+
+/* =========================
+   RESULT GRID
+========================= */
+
+.result-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.result-card {
+  padding: 17px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.result-label {
+  display: block;
+  color: #6b7280;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.result-card strong {
+  display: inline-block;
+  margin-top: 8px;
+  color: #111827;
+  font-size: 24px;
+}
+
+.result-unit {
+  margin-left: 4px;
+  color: #9ca3af;
+  font-size: 10px;
+}
+
+.result-card p {
+  margin: 7px 0 0;
+  color: #9ca3af;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+
+/* =========================
+   GOAL CALORIES
+========================= */
+
+.goal-calorie-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 18px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.goal-calorie-card h3 {
+  margin: 5px 0 0;
+  color: #111827;
+  font-size: 16px;
+}
+
+.goal-calories {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.goal-calories strong {
+  color: #111827;
+  font-size: 25px;
+}
+
+.goal-calories span {
+  color: #9ca3af;
+  font-size: 10px;
+}
+
+
+/* =========================
+   RESULT NOTE
+========================= */
+
+.result-note {
+  padding: 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #f9fafb;
+}
+
+.result-note strong {
+  color: #374151;
+  font-size: 12px;
+}
+
+.result-note p {
+  margin: 5px 0 0;
+  color: #6b7280;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  .calculator-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .calculator-empty-results {
+    min-height: 250px;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .calculator-page {
+    padding: 18px;
+  }
+
+  .calculator-card {
+    padding: 18px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .goal-options {
+    grid-template-columns: 1fr;
+  }
+
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .goal-calorie-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .goal-calories {
+    align-items: flex-start;
+  }
+
+}
+
+/* =========================================================
+   FITSTATS RESPONSIVE SIDEBAR
+   Replaces the old fixed sidebar layout
+========================================================= */
+
+.app {
+  min-height: 100vh;
+  width: 100%;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 270px;
+  height: 100vh;
+
+  box-sizing: border-box;
+  padding: 0;
+
+  background: #111111;
+  color: #ffffff;
+
+  z-index: 1000;
+
+  transform: translateX(-100%);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+  overflow-y: auto;
+}
+
+.sidebar.sidebar-open {
+  transform: translateX(0);
+
+  box-shadow:
+    10px 0 30px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================
+   SIDEBAR HEADER
+========================= */
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 72px;
+  padding: 0 20px;
+
+  border-bottom: 1px solid #292929;
+}
+
+.sidebar-logo {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 750;
+}
+
+.sidebar-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 8px;
+
+  background: transparent;
+  color: #ffffff;
+
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.sidebar-close:hover {
+  background: #252525;
+}
+
+
+/* =========================
+   SIDEBAR NAVIGATION
+========================= */
+
+.sidebar-nav {
+  padding: 25px 15px;
+}
+
+.sidebar-section-title {
+  margin: 0 10px 12px;
+
+  color: #888888;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.sidebar-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.sidebar-nav li {
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-nav a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 12px;
+
+  border-radius: 9px;
+
+  color: #bdbdbd;
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.sidebar-nav a:hover {
+  background: #202020;
+  color: #ffffff;
+  transform: translateX(2px);
+}
+
+.sidebar-nav a.active {
+  background: #ffffff;
+  color: #111111;
+  font-weight: 650;
+}
+
+.nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 24px;
+  min-width: 24px;
+
+  font-size: 16px;
+}
+
+
+/* =========================
+   MENU TOGGLE BUTTON
+========================= */
+
+.sidebar-toggle {
+  position: fixed;
+
+  top: 18px;
+  left: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  z-index: 1100;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+
+  background: #ffffff;
+  color: #111111;
+
+  font-size: 20px;
+  cursor: pointer;
+
+  box-shadow:
+    0 3px 12px rgba(0, 0, 0, 0.08);
+
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease;
+}
+
+.sidebar-toggle:hover {
+  background: #f3f4f6;
+}
+
+.sidebar-toggle:active {
+  transform: scale(0.96);
+}
+
+
+/* =========================
+   SIDEBAR OVERLAY
+========================= */
+
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+
+  z-index: 900;
+
+  background: rgba(0, 0, 0, 0.35);
+
+  backdrop-filter: blur(2px);
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content {
+  width: 100%;
+  min-height: 100vh;
+
+  box-sizing: border-box;
+
+  padding-top: 10px;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================
+   PLACEHOLDER PAGES
+========================= */
+
+.page-placeholder {
+  padding: 90px 30px 30px;
+}
+
+.page-placeholder h1 {
+  margin: 0;
+  color: #111827;
+  font-size: 30px;
+}
+
+.page-placeholder p {
+  margin-top: 8px;
+  color: #6b7280;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+  .sidebar {
+    width: min(290px, 82vw);
+  }
+
+  .sidebar-toggle {
+    top: 12px;
+    left: 12px;
+
+    width: 40px;
+    height: 40px;
+  }
+
+  .main-content {
+    padding-top: 8px;
+  }
+
+}
+
+/* =========================================================
+   FITSTATS DIET PLANNER
+========================================================= */
+
+
+/* =========================
+   DIET PAGE
+========================= */
+
+.diet-page {
+  width: min(1100px, calc(100% - 40px));
+
+  margin: 0 auto;
+
+  padding: 80px 0 60px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   PAGE HEADER
+========================= */
+
+.diet-page-header {
+  margin-bottom: 30px;
+}
+
+.diet-eyebrow {
+  display: inline-block;
+
+  margin-bottom: 8px;
+
+  color: #6b7280;
+
+  font-size: 11px;
+  font-weight: 750;
+
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.diet-page-header h1 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: clamp(30px, 4vw, 42px);
+
+  line-height: 1.1;
+
+  letter-spacing: -1px;
+}
+
+.diet-page-header p {
+  max-width: 650px;
+
+  margin: 12px 0 0;
+
+  color: #6b7280;
+
+  font-size: 15px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================
+   CALORIE TARGET
+========================= */
+
+.diet-target-card {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding: 26px 28px;
+
+  margin-bottom: 35px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 18px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+.diet-target-info {
+  min-width: 0;
+}
+
+.diet-target-info h2 {
+  margin: 3px 0 5px;
+
+  color: #111827;
+
+  font-size: 30px;
+
+  letter-spacing: -0.5px;
+}
+
+.diet-target-info p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 13px;
+}
+
+.diet-target-input {
+  flex-shrink: 0;
+}
+
+.diet-target-input label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #374151;
+
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.diet-input-wrapper {
+  display: flex;
+
+  align-items: center;
+
+  overflow: hidden;
+
+  width: 150px;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.diet-input-wrapper:focus-within {
+  border-color: #111827;
+
+  box-shadow:
+    0 0 0 3px rgba(17, 24, 39, 0.08);
+}
+
+.diet-input-wrapper input {
+  width: 100%;
+
+  padding: 10px 8px 10px 12px;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #111827;
+
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.diet-input-wrapper span {
+  padding-right: 10px;
+
+  color: #9ca3af;
+
+  font-size: 11px;
+}
+
+
+/* =========================
+   DIET PREFERENCE
+========================= */
+
+.diet-preference {
+  margin-bottom: 40px;
+}
+
+.diet-section-header {
+  margin-bottom: 18px;
+}
+
+.diet-section-header h2 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 24px;
+
+  letter-spacing: -0.4px;
+}
+
+.diet-section-header p {
+  margin: 7px 0 0;
+
+  color: #6b7280;
+
+  font-size: 13px;
+}
+
+
+/* =========================
+   PREFERENCE OPTIONS
+========================= */
+
+.diet-preference-options {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+.diet-preference-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  width: 100%;
+
+  padding: 20px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 16px;
+
+  background: #ffffff;
+
+  color: #111827;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 20px rgba(0, 0, 0, 0.04);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.diet-preference-card:hover {
+  transform: translateY(-2px);
+
+  border-color: #cfd3d8;
+
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.07);
+}
+
+.diet-preference-card.active {
+  border-color: #111827;
+
+  box-shadow:
+    0 0 0 2px #111827,
+    0 10px 28px rgba(0, 0, 0, 0.08);
+}
+
+.diet-preference-icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 52px;
+  height: 52px;
+
+  border-radius: 14px;
+
+  background: #f3f4f6;
+
+  font-size: 25px;
+}
+
+.diet-preference-content {
+  min-width: 0;
+}
+
+.diet-preference-content h3 {
+  margin: 0 0 5px;
+
+  font-size: 16px;
+}
+
+.diet-preference-content p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================
+   MEAL PLAN
+========================= */
+
+.meal-plan {
+  margin-top: 10px;
+}
+
+.meal-plan-header {
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 20px;
+}
+
+.meal-plan-header h2 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 26px;
+
+  letter-spacing: -0.5px;
+}
+
+.meal-plan-header p {
+  margin: 7px 0 0;
+
+  color: #6b7280;
+
+  font-size: 13px;
+}
+
+.meal-target {
+  flex-shrink: 0;
+
+  padding: 12px 16px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  text-align: right;
+}
+
+.meal-target span {
+  display: block;
+
+  margin-bottom: 2px;
+
+  color: #9ca3af;
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.8px;
+}
+
+.meal-target strong {
+  color: #111827;
+
+  font-size: 20px;
+}
+
+.meal-target small {
+  margin-left: 4px;
+
+  color: #6b7280;
+
+  font-size: 11px;
+}
+
+
+/* =========================
+   MEAL SUMMARY
+========================= */
+
+.meal-summary {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 12px;
+
+  margin-bottom: 14px;
+}
+
+.meal-summary-item {
+  padding: 17px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 13px;
+
+  background: #ffffff;
+}
+
+.meal-summary-item strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #111827;
+
+  font-size: 20px;
+}
+
+.meal-summary-item span {
+  color: #6b7280;
+
+  font-size: 11px;
+}
+
+
+/* =========================
+   CALORIE STATUS
+========================= */
+
+.meal-calorie-status {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 18px;
+
+  padding: 13px 16px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 11px;
+
+  background: #f9fafb;
+
+  color: #374151;
+
+  font-size: 12px;
+}
+
+.meal-calorie-status strong {
+  color: #111827;
+
+  font-size: 14px;
+}
+
+.meal-calorie-status.over {
+  border-color: #d1d5db;
+
+  background: #f3f4f6;
+}
+
+
+/* =========================
+   MEAL LIST
+========================= */
+
+.meal-list {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+
+/* =========================
+   MEAL CARD
+========================= */
+
+.meal-card {
+  display: flex;
+
+  flex-direction: column;
+
+  min-width: 0;
+
+  padding: 22px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 17px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 6px 24px rgba(0, 0, 0, 0.045);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.meal-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================
+   MEAL HEADER
+========================= */
+
+.meal-card-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  margin-bottom: 18px;
+}
+
+.meal-icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 13px;
+
+  background: #f3f4f6;
+
+  font-size: 22px;
+}
+
+.meal-card-title {
+  min-width: 0;
+}
+
+.meal-type {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #9ca3af;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+.meal-card h3 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 16px;
+
+  line-height: 1.35;
+}
+
+
+/* =========================
+   NUTRITION
+========================= */
+
+.meal-nutrition {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 7px;
+
+  padding: 12px 0;
+
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.meal-nutrition > div {
+  text-align: center;
+}
+
+.meal-nutrition strong {
+  display: block;
+
+  color: #111827;
+
+  font-size: 14px;
+}
+
+.meal-nutrition span {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #9ca3af;
+
+  font-size: 9px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.4px;
+}
+
+
+/* =========================
+   INGREDIENTS
+========================= */
+
+.meal-ingredients {
+  padding: 14px 0 10px;
+}
+
+.meal-ingredients > span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #374151;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+.meal-ingredients p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================
+   MEAL DETAILS
+========================= */
+
+.meal-details {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-top: auto;
+
+  padding-top: 10px;
+
+  color: #6b7280;
+
+  font-size: 10px;
+}
+
+
+/* =========================
+   CHANGE MEAL
+========================= */
+
+.change-meal-button {
+  width: 100%;
+
+  margin-top: 15px;
+
+  padding: 10px 14px;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #111827;
+
+  font-size: 12px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.change-meal-button:hover:not(:disabled) {
+  background: #f3f4f6;
+
+  border-color: #9ca3af;
+}
+
+.change-meal-button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.change-meal-button:disabled {
+  opacity: 0.45;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================
+   RESPONSIVE DIET
+========================= */
+
+@media (max-width: 850px) {
+
+  .diet-page {
+    width: min(
+      100% - 30px,
+      700px
+    );
+
+    padding-top: 70px;
+  }
+
+  .meal-list {
+    grid-template-columns: 1fr;
+  }
+
+  .meal-summary {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .diet-page {
+    width: calc(100% - 24px);
+
+    padding-top: 65px;
+  }
+
+  .diet-target-card {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    padding: 20px;
+  }
+
+  .diet-target-input {
+    width: 100%;
+  }
+
+  .diet-input-wrapper {
+    width: 100%;
+  }
+
+  .diet-preference-options {
+    grid-template-columns: 1fr;
+  }
+
+  .meal-plan-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .meal-target {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    text-align: left;
+  }
+
+  .meal-summary {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .meal-card {
+    padding: 18px;
+  }
+
+  .meal-nutrition {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    row-gap: 12px;
+  }
+
+  .meal-details {
+    flex-direction: column;
+  }
+
+}
+
+
+@media (max-width: 400px) {
+
+  .meal-summary {
+    grid-template-columns: 1fr;
+  }
+
+}
+/* =========================
+   MEAL CALORIE MATCH
+========================= */
+
+.meal-match {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-top: 8px;
+
+  padding: 8px 10px;
+
+  border-radius: 8px;
+
+  background: #f9fafb;
+
+  color: #6b7280;
+
+  font-size: 10px;
+}
+
+.meal-match strong {
+  color: #111827;
+
+  font-size: 11px;
+}
+
+/* =========================================================
+   DIET FITNESS GOAL
+========================================================= */
+
+.diet-goal-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  margin-bottom: 20px;
+
+  padding: 22px 24px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 18px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 6px 24px rgba(0, 0, 0, 0.045);
+}
+
+.diet-goal-icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 54px;
+  height: 54px;
+
+  border-radius: 14px;
+
+  background: #f3f4f6;
+
+  font-size: 25px;
+}
+
+.diet-goal-content {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.diet-goal-content h2 {
+  margin: 0 0 5px;
+
+  color: #111827;
+
+  font-size: 22px;
+
+  letter-spacing: -0.3px;
+}
+
+.diet-goal-content p {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+.diet-goal-calories {
+  flex-shrink: 0;
+
+  min-width: 120px;
+
+  padding-left: 20px;
+
+  border-left: 1px solid #e5e7eb;
+
+  text-align: right;
+}
+
+.diet-goal-calories span {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #9ca3af;
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.7px;
+}
+
+.diet-goal-calories strong {
+  color: #111827;
+
+  font-size: 20px;
+}
+
+.diet-goal-calories small {
+  margin-left: 3px;
+
+  color: #6b7280;
+
+  font-size: 10px;
+}
+
+
+/* =========================
+   GOAL CARD RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+
+  .diet-goal-card {
+    align-items: flex-start;
+
+    flex-wrap: wrap;
+
+    padding: 18px;
+  }
+
+  .diet-goal-content {
+    flex: 1;
+  }
+
+  .diet-goal-calories {
+    width: 100%;
+
+    padding: 14px 0 0;
+
+    border-left: none;
+
+    border-top: 1px solid #e5e7eb;
+
+    text-align: left;
+  }
+
+}
+
+/* =========================================================
+   DAILY NUTRITION TRACKER
+========================================================= */
+
+.nutrition-tracker {
+  margin-bottom: 18px;
+
+  padding: 20px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 16px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 6px 24px rgba(0, 0, 0, 0.045);
+}
+
+
+.nutrition-tracker-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 12px;
+}
+
+
+.nutrition-tracker-header div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+
+.nutrition-tracker-header span {
+  color: #9ca3af;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.9px;
+}
+
+
+.nutrition-tracker-header strong {
+  color: #111827;
+
+  font-size: 15px;
+}
+
+
+.nutrition-progress-bar {
+  width: 100%;
+
+  height: 8px;
+
+  overflow: hidden;
+
+  margin-bottom: 18px;
+
+  border-radius: 999px;
+
+  background: #f3f4f6;
+}
+
+
+.nutrition-progress-fill {
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: #111827;
+
+  transition:
+    width 0.35s ease;
+}
+
+
+.nutrition-tracker-stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+
+  gap: 10px;
+}
+
+
+.nutrition-tracker-stats > div {
+  padding: 10px;
+
+  border-radius: 9px;
+
+  background: #f9fafb;
+}
+
+
+.nutrition-tracker-stats span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #9ca3af;
+
+  font-size: 9px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.4px;
+}
+
+
+.nutrition-tracker-stats strong {
+  color: #111827;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   COMPLETED MEAL
+========================================================= */
+
+.meal-card.completed {
+  border-color: #cfd3d8;
+
+  box-shadow:
+    0 0 0 1px #e5e7eb,
+    0 8px 26px rgba(0, 0, 0, 0.05);
+}
+
+
+.meal-completed-badge {
+  flex-shrink: 0;
+
+  padding: 5px 8px;
+
+  border-radius: 999px;
+
+  background: #f3f4f6;
+
+  color: #374151;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   MEAL ACTIONS
+========================================================= */
+
+/* =========================================================
+   MEAL ACTIONS
+========================================================= */
+
+.meal-actions {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 10px;
+
+  width: 100%;
+
+  margin-top: 15px;
+}
+
+
+/* =========================================================
+   COMMON BUTTON STYLE
+========================================================= */
+
+.meal-eaten-button,
+.change-meal-button {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 40px;
+
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 0 12px;
+
+  border-radius: 9px;
+
+  font-family: inherit;
+
+  font-size: 11px;
+  font-weight: 650;
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* =========================================================
+   MARK AS EATEN
+========================================================= */
+
+.meal-eaten-button {
+  border: 1px solid #111827;
+
+  background: #111827;
+
+  color: #ffffff;
+}
+
+.meal-eaten-button:hover {
+  background: #374151;
+
+  border-color: #374151;
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.meal-eaten-button:active {
+  transform: scale(0.98);
+}
+
+
+/* =========================================================
+   COMPLETED / EATEN STATE
+========================================================= */
+
+.meal-eaten-button.completed {
+  border-color: #d1d5db;
+
+  background: #ffffff;
+
+  color: #111827;
+}
+
+.meal-eaten-button.completed:hover {
+  background: #f3f4f6;
+
+  border-color: #9ca3af;
+
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   CHANGE MEAL
+========================================================= */
+
+.change-meal-button {
+  border: 1px solid #d1d5db;
+
+  background: #ffffff;
+
+  color: #111827;
+}
+
+.change-meal-button:hover:not(:disabled) {
+  background: #f3f4f6;
+
+  border-color: #9ca3af;
+
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.change-meal-button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+
+/* =========================================================
+   DISABLED CHANGE BUTTON
+========================================================= */
+
+.change-meal-button:disabled {
+  opacity: 0.45;
+
+  cursor: not-allowed;
+
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   RESPONSIVE TRACKER
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .nutrition-tracker-stats {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .nutrition-tracker {
+    padding: 16px;
+  }
+
+
+  .nutrition-tracker-stats {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+
+  .meal-actions {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .nutrition-tracker-stats {
+    grid-template-columns: 1fr;
+  }
+
+
+  .meal-actions {
+    gap: 8px;
+  }
+
+}
+
+/* =========================================================
+   NUTRITION OVERVIEW
+========================================================= */
+
+.nutrition-overview {
+  margin-bottom: 18px;
+
+  padding: 20px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 16px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 6px 24px rgba(0, 0, 0, 0.045);
+}
+
+
+.nutrition-overview-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 20px;
+}
+
+
+.nutrition-overview-eyebrow {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #9ca3af;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.9px;
+}
+
+
+.nutrition-overview-header h3 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 18px;
+
+  font-weight: 700;
+
+  letter-spacing: -0.2px;
+}
+
+
+/* =========================================================
+   NUTRITION PROGRESS ITEM
+========================================================= */
+
+.nutrition-progress-item {
+  margin-bottom: 17px;
+}
+
+
+.nutrition-progress-item:last-child {
+  margin-bottom: 0;
+}
+
+
+.nutrition-progress-info {
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 7px;
+}
+
+
+.nutrition-progress-info > div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+.nutrition-progress-info span {
+  color: #6b7280;
+
+  font-size: 11px;
+}
+
+
+.nutrition-progress-info strong {
+  color: #111827;
+
+  font-size: 12px;
+}
+
+
+.nutrition-progress-info > span {
+  color: #6b7280;
+
+  font-size: 10px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   NUTRITION BAR
+========================================================= */
+
+.nutrition-bar {
+  width: 100%;
+
+  height: 7px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: #f1f3f5;
+}
+
+
+.nutrition-bar-fill {
+  height: 100%;
+
+  min-width: 0;
+
+  border-radius: inherit;
+
+  background: #111827;
+
+  transition:
+    width 0.4s ease;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .nutrition-overview {
+    padding: 16px;
+  }
+
+
+  .nutrition-overview-header h3 {
+    font-size: 16px;
+  }
+
+}
+
+/* =========================================================
+   MEAL DAY CONTROLS
+========================================================= */
+
+.meal-day-controls {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 18px;
+
+  padding: 14px 16px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+}
+
+
+.meal-today {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+.meal-today span {
+  color: #9ca3af;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.8px;
+}
+
+
+.meal-today strong {
+  color: #111827;
+
+  font-size: 13px;
+}
+
+
+.reset-diet-button {
+  height: 34px;
+
+  padding: 0 12px;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #6b7280;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+
+.reset-diet-button:hover {
+  background: #f3f4f6;
+
+  border-color: #9ca3af;
+
+  color: #111827;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .meal-day-controls {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .reset-diet-button {
+    width: 100%;
+  }
+
+}
+
+/* =========================================================
+   DASHBOARD NUTRITION
+========================================================= */
+
+.dashboard-progress-meta {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-top: 6px;
+
+  color: #9ca3af;
+
+  font-size: 9px;
+}
+
+
+.dashboard-macro-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 10px;
+}
+
+
+.dashboard-macro-item {
+  padding: 13px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 10px;
+
+  background: #f9fafb;
+}
+
+
+.dashboard-macro-item span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #9ca3af;
+
+  font-size: 9px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+}
+
+
+.dashboard-macro-item strong {
+  color: #111827;
+
+  font-size: 15px;
+}
+
+
+@media (max-width: 500px) {
+
+  .dashboard-progress-meta {
+    flex-direction: column;
+
+    gap: 3px;
+  }
+
+}
+/* =========================================================
+   FITSTATS DASHBOARD
+========================================================= */
+
+.dashboard-page {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 28px 32px 50px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   DASHBOARD HEADER
+========================================================= */
+
+.dashboard-header {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 24px;
+
+  margin-bottom: 28px;
+}
+
+
+.dashboard-eyebrow,
+.dashboard-card-eyebrow {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #69bee1;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.4px;
+
+  text-transform: uppercase;
+}
+
+
+.dashboard-header h1 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 30px;
+
+  font-weight: 750;
+
+  line-height: 1.15;
+
+  letter-spacing: -0.7px;
+}
+
+
+.dashboard-header p {
+  margin: 8px 0 0;
+
+  color: #6b7280;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+
+.dashboard-date {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  flex-shrink: 0;
+
+  padding-bottom: 3px;
+}
+
+
+.dashboard-date span {
+  margin-bottom: 4px;
+
+  color: #9ca3af;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+
+.dashboard-date strong {
+  color: #374151;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   QUICK STAT CARDS
+========================================================= */
+
+.dashboard-stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 14px;
+
+  margin-bottom: 18px;
+}
+
+
+.dashboard-stat-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  min-width: 0;
+
+  padding: 17px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 13px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 2px 8px rgba(17, 24, 39, 0.03);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.dashboard-stat-card:hover {
+  transform: translateY(-2px);
+
+  border-color: #d1d5db;
+
+  box-shadow:
+    0 7px 18px rgba(17, 24, 39, 0.07);
+}
+
+
+.dashboard-stat-icon {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 38px;
+
+  height: 38px;
+
+  border-radius: 10px;
+
+  background: #f0f9fd;
+
+  font-size: 17px;
+}
+
+
+.dashboard-stat-card > div:last-child {
+  min-width: 0;
+}
+
+
+.dashboard-stat-card span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #9ca3af;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.4px;
+
+  text-transform: uppercase;
+}
+
+
+.dashboard-stat-card strong {
+  display: block;
+
+  overflow: hidden;
+
+  color: #111827;
+
+  font-size: 17px;
+
+  font-weight: 750;
+
+  line-height: 1.25;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+
+.dashboard-stat-card small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #9ca3af;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   MAIN DASHBOARD GRID
+========================================================= */
+
+.dashboard-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.4fr)
+    minmax(0, 1fr);
+
+  gap: 16px;
+
+  align-items: start;
+}
+
+
+.dashboard-card {
+  min-width: 0;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 2px 8px rgba(17, 24, 39, 0.03);
+}
+
+
+.dashboard-card-header {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  margin-bottom: 20px;
+}
+
+
+.dashboard-card-header h2 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 18px;
+
+  font-weight: 700;
+
+  line-height: 1.25;
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.dashboard-progress-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 21px;
+}
+
+
+.dashboard-progress-item {
+  min-width: 0;
+}
+
+
+.dashboard-progress-label {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 8px;
+}
+
+
+.dashboard-progress-label span {
+  color: #374151;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+
+.dashboard-progress-label strong {
+  color: #111827;
+
+  font-size: 10px;
+
+  font-weight: 650;
+
+  text-align: right;
+}
+
+
+.dashboard-progress-bar {
+  width: 100%;
+
+  height: 7px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: #f1f3f5;
+}
+
+
+.dashboard-progress-fill {
+  height: 100%;
+
+  min-width: 0;
+
+  border-radius: inherit;
+
+  background: #69bee1;
+
+  transition:
+    width 0.35s ease;
+}
+
+
+.dashboard-progress-meta {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-top: 6px;
+
+  color: #9ca3af;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   NUTRITION MACROS
+========================================================= */
+
+.dashboard-macro-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 10px;
+}
+
+
+.dashboard-macro-item {
+  padding: 13px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 10px;
+
+  background: #f9fafb;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.dashboard-macro-item:hover {
+  background: #ffffff;
+
+  border-color: #d1d5db;
+}
+
+
+.dashboard-macro-item span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #9ca3af;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+}
+
+
+.dashboard-macro-item strong {
+  color: #111827;
+
+  font-size: 15px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   QUICK ACTIONS
+========================================================= */
+
+.dashboard-actions {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+
+.dashboard-action {
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  width: 100%;
+
+  min-height: 52px;
+
+  padding: 9px 11px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  color: inherit;
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.dashboard-action:hover {
+  background: #f9fafb;
+
+  border-color: #d1d5db;
+
+  transform: translateX(2px);
+}
+
+
+.dashboard-action > span {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 31px;
+
+  height: 31px;
+
+  border-radius: 8px;
+
+  background: #f0f9fd;
+
+  font-size: 14px;
+}
+
+
+.dashboard-action > div {
+  flex: 1;
+
+  min-width: 0;
+}
+
+
+.dashboard-action strong {
+  display: block;
+
+  color: #111827;
+
+  font-size: 11px;
+
+  font-weight: 650;
+}
+
+
+.dashboard-action small {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #9ca3af;
+
+  font-size: 9px;
+}
+
+
+.dashboard-action b {
+  color: #9ca3af;
+
+  font-size: 15px;
+
+  font-weight: 500;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.dashboard-action:hover b {
+  color: #69bee1;
+
+  transform: translateX(2px);
+}
+
+
+/* =========================================================
+   AI COACH
+========================================================= */
+
+.dashboard-ai-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  margin-top: 16px;
+
+  padding: 22px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #dbeef6;
+
+  border-radius: 14px;
+
+  background: #f7fcfe;
+}
+
+
+.dashboard-ai-icon {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 45px;
+
+  height: 45px;
+
+  border-radius: 12px;
+
+  background: #69bee1;
+
+  color: #ffffff;
+
+  font-size: 20px;
+
+  box-shadow:
+    0 5px 14px rgba(105, 190, 225, 0.25);
+}
+
+
+.dashboard-ai-content {
+  flex: 1;
+
+  min-width: 0;
+}
+
+
+.dashboard-ai-content > span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #69bee1;
+
+  font-size: 9px;
+
+  font-weight: 750;
+
+  letter-spacing: 1px;
+}
+
+
+.dashboard-ai-content h2 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 16px;
+
+  font-weight: 700;
+}
+
+
+.dashboard-ai-content p {
+  max-width: 650px;
+
+  margin: 5px 0 0;
+
+  color: #6b7280;
+
+  font-size: 10px;
+
+  line-height: 1.55;
+}
+
+
+.dashboard-ai-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  min-height: 36px;
+
+  padding: 0 14px;
+
+  border-radius: 9px;
+
+  background: #111827;
+
+  color: #ffffff;
+
+  font-size: 10px;
+
+  font-weight: 650;
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease;
+}
+
+
+.dashboard-ai-button:hover {
+  background: #374151;
+
+  transform: translateY(-1px);
+}
+
+
+.dashboard-ai-button:active {
+  transform: scale(0.98);
+}
+
+
+/* =========================================================
+   DASHBOARD RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .dashboard-stats {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+
+  .dashboard-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .dashboard-page {
+    padding: 22px 18px 40px;
+  }
+
+
+  .dashboard-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 14px;
+  }
+
+
+  .dashboard-date {
+    align-items: flex-start;
+  }
+
+
+  .dashboard-header h1 {
+    font-size: 26px;
+  }
+
+
+  .dashboard-ai-card {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  .dashboard-ai-button {
+    width: 100%;
+  }
+
+}
+
+
+@media (max-width: 520px) {
+
+  .dashboard-page {
+    padding: 18px 14px 35px;
+  }
+
+
+  .dashboard-stats {
+    grid-template-columns:
+      1fr;
+
+    gap: 10px;
+  }
+
+
+  .dashboard-stat-card {
+    padding: 14px;
+  }
+
+
+  .dashboard-card {
+    padding: 16px;
+  }
+
+
+  .dashboard-card-header {
+    margin-bottom: 17px;
+  }
+
+
+  .dashboard-card-header h2 {
+    font-size: 16px;
+  }
+
+
+  .dashboard-progress-meta {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 3px;
+  }
+
+
+  .dashboard-progress-label {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 4px;
+  }
+
+
+  .dashboard-progress-label strong {
+    text-align: left;
+  }
+
+
+  .dashboard-macro-grid {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+
+  .dashboard-ai-card {
+    padding: 17px;
+  }
+
+}
+
+
+@media (max-width: 360px) {
+
+  .dashboard-macro-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .dashboard-header h1 {
+    font-size: 23px;
+  }
+
+
+  .dashboard-stat-card strong {
+    font-size: 15px;
+  }
+
+}
+
+/* =========================================================
+   DASHBOARD DAILY OVERVIEW
+========================================================= */
+
+.dashboard-daily-card {
+  margin-bottom: 16px;
+
+  padding: 22px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 2px 8px rgba(17, 24, 39, 0.03);
+}
+
+
+.dashboard-daily-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+
+.dashboard-daily-header h2 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 20px;
+
+  font-weight: 700;
+}
+
+
+.dashboard-daily-header p {
+  margin: 5px 0 0;
+
+  color: #6b7280;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+
+.dashboard-daily-percentage {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  flex-shrink: 0;
+}
+
+
+.dashboard-daily-percentage strong {
+  color: #111827;
+
+  font-size: 25px;
+
+  line-height: 1;
+}
+
+
+.dashboard-daily-percentage span {
+  margin-top: 4px;
+
+  color: #9ca3af;
+
+  font-size: 9px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+}
+
+
+.dashboard-overall-bar {
+  width: 100%;
+
+  height: 9px;
+
+  margin-top: 18px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: #f1f3f5;
+}
+
+
+.dashboard-overall-fill {
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: #69bee1;
+
+  transition:
+    width 0.35s ease;
+}
+
+
+.dashboard-daily-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 10px;
+
+  margin-top: 16px;
+}
+
+
+.dashboard-daily-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  min-width: 0;
+
+  padding: 11px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 10px;
+
+  background: #f9fafb;
+}
+
+
+.dashboard-daily-icon {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 30px;
+
+  height: 30px;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  font-size: 13px;
+}
+
+
+.dashboard-daily-item > div {
+  flex: 1;
+
+  min-width: 0;
+}
+
+
+.dashboard-daily-item strong {
+  display: block;
+
+  color: #111827;
+
+  font-size: 10px;
+}
+
+
+.dashboard-daily-item span:not(.dashboard-daily-icon) {
+  display: block;
+
+  margin-top: 2px;
+
+  overflow: hidden;
+
+  color: #9ca3af;
+
+  font-size: 8px;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+
+.dashboard-daily-item b {
+  flex-shrink: 0;
+
+  color: #69bee1;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   DAILY OVERVIEW RESPONSIVE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .dashboard-daily-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  .dashboard-daily-percentage {
+    align-items: flex-start;
+  }
+
+
+  .dashboard-daily-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+/* =========================================================
+   FITSTATS PROFESSIONAL THEME
+   ========================================================= */
+
+:root {
+  --fit-bg: #f6f8fb;
+  --fit-card: #ffffff;
+
+  --fit-text: #111827;
+  --fit-text-secondary: #6b7280;
+  --fit-text-muted: #9ca3af;
+
+  --fit-border: #e5e7eb;
+  --fit-border-light: #eef0f3;
+
+  --fit-accent: #69bee1;
+  --fit-accent-dark: #3d9fc8;
+  --fit-accent-soft: #eaf7fc;
+
+  --fit-success: #16a34a;
+  --fit-success-soft: #ecfdf3;
+
+  --fit-danger: #dc2626;
+  --fit-danger-soft: #fef2f2;
+
+  --fit-shadow-sm:
+    0 2px 8px rgba(17, 24, 39, 0.05);
+
+  --fit-shadow:
+    0 8px 24px rgba(17, 24, 39, 0.07);
+
+  --fit-shadow-lg:
+    0 14px 40px rgba(17, 24, 39, 0.09);
+
+  --fit-radius-sm: 8px;
+  --fit-radius: 12px;
+  --fit-radius-lg: 16px;
+}
+
+
+/* =========================================================
+   GLOBAL FITSTATS BASE
+   ========================================================= */
+
+html {
+  background: var(--fit-bg);
+}
+
+body {
+  margin: 0;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  background: var(--fit-bg);
+
+  color: var(--fit-text);
+
+  -webkit-font-smoothing: antialiased;
+}
+
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   DASHBOARD PAGE
+   ========================================================= */
+
+.dashboard-page {
+  width: 100%;
+  max-width: 1180px;
+
+  margin: 0 auto;
+
+  padding: 32px 30px 50px;
+
+  color: var(--fit-text);
+}
+
+
+/* =========================================================
+   DASHBOARD HEADER
+   ========================================================= */
+
+.dashboard-header {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 24px;
+
+  margin-bottom: 28px;
+}
+
+
+.dashboard-eyebrow,
+.dashboard-card-eyebrow {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--fit-accent-dark);
+
+  font-size: 10px;
+
+  font-weight: 750;
+
+  letter-spacing: 1.3px;
+
+  text-transform: uppercase;
+}
+
+
+.dashboard-header h1 {
+  margin: 0;
+
+  color: var(--fit-text);
+
+  font-size: 30px;
+
+  line-height: 1.15;
+
+  font-weight: 750;
+
+  letter-spacing: -0.7px;
+}
+
+
+.dashboard-header p {
+  margin: 9px 0 0;
+
+  color: var(--fit-text-secondary);
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+
+.dashboard-date {
+  min-width: 175px;
+
+  padding: 13px 16px;
+
+  border: 1px solid var(--fit-border);
+
+  border-radius: var(--fit-radius);
+
+  background: var(--fit-card);
+
+  box-shadow: var(--fit-shadow-sm);
+
+  text-align: right;
+}
+
+
+.dashboard-date span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--fit-text-muted);
+
+  font-size: 9px;
+
+  font-weight: 750;
+
+  letter-spacing: 1px;
+}
+
+
+.dashboard-date strong {
+  color: var(--fit-text);
+
+  font-size: 12px;
+
+  font-weight: 650;
+}
+
+
+/* =========================================================
+   QUICK STATS
+   ========================================================= */
+
+.dashboard-stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 14px;
+
+  margin-bottom: 18px;
+}
+
+
+.dashboard-stat-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  min-width: 0;
+
+  padding: 17px;
+
+  border: 1px solid var(--fit-border);
+
+  border-radius: var(--fit-radius);
+
+  background: var(--fit-card);
+
+  box-shadow: var(--fit-shadow-sm);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.dashboard-stat-card:hover {
+  transform: translateY(-2px);
+
+  border-color: #d8dde4;
+
+  box-shadow: var(--fit-shadow);
+}
+
+
+.dashboard-stat-icon {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex: 0 0 40px;
+
+  width: 40px;
+
+  height: 40px;
+
+  border-radius: 10px;
+
+  background: var(--fit-accent-soft);
+
+  font-size: 18px;
+}
+
+
+.dashboard-stat-card span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--fit-text-muted);
+
+  font-size: 9px;
+
+  font-weight: 650;
+
+  letter-spacing: 0.4px;
+
+  text-transform: uppercase;
+}
+
+
+.dashboard-stat-card strong {
+  display: block;
+
+  color: var(--fit-text);
+
+  font-size: 17px;
+
+  line-height: 1.2;
+
+  font-weight: 750;
+}
+
+
+.dashboard-stat-card small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: var(--fit-text-secondary);
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   DAILY OVERVIEW
+   ========================================================= */
+
+.dashboard-daily-card {
+  padding: 22px;
+
+  margin-bottom: 18px;
+
+  border: 1px solid var(--fit-border);
+
+  border-radius: var(--fit-radius-lg);
+
+  background: var(--fit-card);
+
+  box-shadow: var(--fit-shadow);
+}
+
+
+.dashboard-daily-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 18px;
+}
+
+
+.dashboard-daily-header h2 {
+  margin: 0;
+
+  color: var(--fit-text);
+
+  font-size: 20px;
+
+  font-weight: 750;
+
+  letter-spacing: -0.3px;
+}
+
+
+.dashboard-daily-header p {
+  max-width: 650px;
+
+  margin: 6px 0 0;
+
+  color: var(--fit-text-secondary);
+
+  font-size: 12px;
+
+  line-height: 1.55;
+}
+
+
+.dashboard-daily-percentage {
+  flex-shrink: 0;
+
+  text-align: right;
+}
+
+
+.dashboard-daily-percentage strong {
+  display: block;
+
+  color: var(--fit-text);
+
+  font-size: 30px;
+
+  line-height: 1;
+
+  font-weight: 800;
+}
+
+
+.dashboard-daily-percentage span {
+  display: block;
+
+  margin-top: 5px;
+
+  color: var(--fit-text-muted);
+
+  font-size: 9px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.6px;
+}
+
+
+/* =========================================================
+   OVERALL PROGRESS
+   ========================================================= */
+
+.dashboard-overall-bar {
+  width: 100%;
+
+  height: 8px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: #edf0f3;
+}
+
+
+.dashboard-overall-fill {
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--fit-accent),
+      var(--fit-accent-dark)
+    );
+
+  transition: width 0.4s ease;
+}
+
+
+/* =========================================================
+   DAILY CATEGORIES
+   ========================================================= */
+
+.dashboard-daily-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 10px;
+
+  margin-top: 17px;
+}
+
+
+.dashboard-daily-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  min-width: 0;
+
+  padding: 12px;
+
+  border: 1px solid var(--fit-border-light);
+
+  border-radius: 10px;
+
+  background: #fafbfc;
+}
+
+
+.dashboard-daily-icon {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex: 0 0 34px;
+
+  width: 34px;
+
+  height: 34px;
+
+  border-radius: 9px;
+
+  background: var(--fit-accent-soft);
+
+  font-size: 15px;
+}
+
+
+.dashboard-daily-item > div {
+  min-width: 0;
+
+  flex: 1;
+}
+
+
+.dashboard-daily-item strong {
+  display: block;
+
+  color: var(--fit-text);
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+.dashboard-daily-item div span {
+  display: block;
+
+  margin-top: 3px;
+
+  overflow: hidden;
+
+  color: var(--fit-text-muted);
+
+  font-size: 9px;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+
+.dashboard-daily-item b {
+  flex-shrink: 0;
+
+  color: var(--fit-accent-dark);
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   DASHBOARD MAIN GRID
+   ========================================================= */
+
+.dashboard-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+
+  margin-bottom: 18px;
+}
+
+
+.dashboard-card {
+  min-width: 0;
+
+  padding: 21px;
+
+  border: 1px solid var(--fit-border);
+
+  border-radius: var(--fit-radius-lg);
+
+  background: var(--fit-card);
+
+  box-shadow: var(--fit-shadow-sm);
+
+  transition:
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.dashboard-card:hover {
+  border-color: #dce1e7;
+
+  box-shadow: var(--fit-shadow);
+}
+
+
+.dashboard-card-header {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+
+.dashboard-card-header h2 {
+  margin: 0;
+
+  color: var(--fit-text);
+
+  font-size: 17px;
+
+  font-weight: 750;
+}
+
+
+/* =========================================================
+   PROGRESS LIST
+   ========================================================= */
+
+.dashboard-progress-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+
+.dashboard-progress-item {
+  width: 100%;
+}
+
+
+.dashboard-progress-label {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 7px;
+}
+
+
+.dashboard-progress-label span {
+  color: var(--fit-text);
+
+  font-size: 11px;
+
+  font-weight: 650;
+}
+
+
+.dashboard-progress-label strong {
+  color: var(--fit-text-secondary);
+
+  font-size: 10px;
+
+  font-weight: 650;
+
+  text-align: right;
+}
+
+
+.dashboard-progress-bar {
+  width: 100%;
+
+  height: 7px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: #edf0f3;
+}
+
+
+.dashboard-progress-fill {
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: var(--fit-accent);
+
+  transition: width 0.35s ease;
+}
+
+
+/* =========================================================
+   NUTRITION MACROS
+   ========================================================= */
+
+.dashboard-macro-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 10px;
+}
+
+
+.dashboard-macro-item {
+  padding: 14px;
+
+  border: 1px solid var(--fit-border-light);
+
+  border-radius: 10px;
+
+  background: #fafbfc;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.dashboard-macro-item:hover {
+  border-color: #dce1e7;
+
+  background: #ffffff;
+}
+
+
+.dashboard-macro-item span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: var(--fit-text-muted);
+
+  font-size: 9px;
+
+  font-weight: 650;
+
+  letter-spacing: 0.5px;
+
+  text-transform: uppercase;
+}
+
+
+.dashboard-macro-item strong {
+  color: var(--fit-text);
+
+  font-size: 16px;
+
+  font-weight: 750;
+}
+
+
+/* =========================================================
+   QUICK ACTIONS
+   ========================================================= */
+
+.dashboard-actions {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+
+.dashboard-action {
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 11px 12px;
+
+  border: 1px solid var(--fit-border-light);
+
+  border-radius: 10px;
+
+  background: #fafbfc;
+
+  color: var(--fit-text);
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.dashboard-action:hover {
+  transform: translateX(2px);
+
+  border-color: #cfeaf5;
+
+  background: var(--fit-accent-soft);
+}
+
+
+.dashboard-action > span {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex: 0 0 32px;
+
+  width: 32px;
+
+  height: 32px;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  font-size: 15px;
+}
+
+
+.dashboard-action > div {
+  flex: 1;
+
+  min-width: 0;
+}
+
+
+.dashboard-action strong {
+  display: block;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+.dashboard-action small {
+  display: block;
+
+  margin-top: 2px;
+
+  color: var(--fit-text-muted);
+
+  font-size: 9px;
+}
+
+
+.dashboard-action > b {
+  color: var(--fit-accent-dark);
+
+  font-size: 16px;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   AI COACH
+   ========================================================= */
+
+.dashboard-ai-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 17px;
+
+  padding: 21px 22px;
+
+  border: 1px solid #cfeaf5;
+
+  border-radius: var(--fit-radius-lg);
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #f2fbfe 100%
+    );
+
+  box-shadow: var(--fit-shadow-sm);
+}
+
+
+.dashboard-ai-icon {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex: 0 0 46px;
+
+  width: 46px;
+
+  height: 46px;
+
+  border-radius: 12px;
+
+  background: var(--fit-accent-soft);
+
+  color: var(--fit-accent-dark);
+
+  font-size: 23px;
+
+  font-weight: 700;
+}
+
+
+.dashboard-ai-content {
+  flex: 1;
+
+  min-width: 0;
+}
+
+
+.dashboard-ai-content > span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: var(--fit-accent-dark);
+
+  font-size: 9px;
+
+  font-weight: 750;
+
+  letter-spacing: 1px;
+}
+
+
+.dashboard-ai-content h2 {
+  margin: 0;
+
+  color: var(--fit-text);
+
+  font-size: 16px;
+
+  font-weight: 750;
+}
+
+
+.dashboard-ai-content p {
+  max-width: 650px;
+
+  margin: 5px 0 0;
+
+  color: var(--fit-text-secondary);
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+
+.dashboard-ai-button {
+  flex-shrink: 0;
+
+  padding: 10px 15px;
+
+  border-radius: 9px;
+
+  background: var(--fit-text);
+
+  color: #ffffff;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.dashboard-ai-button:hover {
+  background: #273244;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   RESPONSIVE DASHBOARD
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .dashboard-stats {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+@media (max-width: 800px) {
+
+  .dashboard-page {
+    padding: 24px 20px 40px;
+  }
+
+
+  .dashboard-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  .dashboard-date {
+    width: 100%;
+
+    text-align: left;
+  }
+
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .dashboard-daily-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .dashboard-daily-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  .dashboard-daily-percentage {
+    text-align: left;
+  }
+
+
+  .dashboard-ai-card {
+    align-items: flex-start;
+
+    flex-wrap: wrap;
+  }
+
+
+  .dashboard-ai-button {
+    width: 100%;
+
+    text-align: center;
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+  .dashboard-page {
+    padding: 20px 15px 32px;
+  }
+
+
+  .dashboard-header h1 {
+    font-size: 25px;
+  }
+
+
+  .dashboard-stats {
+    grid-template-columns: 1fr;
+  }
+
+
+  .dashboard-daily-card,
+  .dashboard-card,
+  .dashboard-ai-card {
+    padding: 17px;
+  }
+
+
+  .dashboard-macro-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   END FITSTATS PROFESSIONAL THEME
+   ========================================================= */
+
+   /* =========================================================
+   FITSTATS — PROFESSIONAL WORKOUT THEME
+   ========================================================= */
+
+.workout-page {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 0 50px;
+}
+
+
+/* =========================================================
+   WORKOUT PAGE HEADER
+   ========================================================= */
+
+.workout-page-header {
+  margin-bottom: 24px;
+}
+
+.workout-eyebrow {
+  display: inline-block;
+  margin-bottom: 7px;
+
+  color: #69bee1;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.workout-page-header h1 {
+  margin: 0 0 7px;
+
+  color: #111827;
+
+  font-size: 30px;
+  font-weight: 750;
+  line-height: 1.15;
+}
+
+.workout-page-header p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   SPLIT SELECTOR
+   ========================================================= */
+
+.split-selector {
+  margin-bottom: 22px;
+  padding: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+
+  box-shadow:
+    0 4px 14px rgba(17, 24, 39, 0.04);
+}
+
+.split-selector h2 {
+  margin: 0 0 6px;
+
+  color: #111827;
+
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.split-description {
+  margin: 0 0 16px;
+
+  color: #6b7280;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.split-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.split-buttons button {
+  min-width: 90px;
+
+  padding: 10px 17px;
+
+  background: #f8fafc;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 9px;
+
+  color: #374151;
+
+  font-size: 12px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.split-buttons button:hover {
+  background: #eef9fd;
+
+  border-color: #a9dff1;
+
+  color: #247da0;
+
+  transform: translateY(-1px);
+}
+
+.split-buttons button:focus-visible {
+  outline: 2px solid #69bee1;
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   WORKOUT PLAN HEADER
+   ========================================================= */
+
+.workout-header {
+  margin-bottom: 15px;
+}
+
+.workout-header h2 {
+  margin: 0 0 5px;
+
+  color: #111827;
+
+  font-size: 19px;
+  font-weight: 720;
+}
+
+.workout-header p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   WORKOUT PROGRESS
+   ========================================================= */
+
+.progress-container {
+  margin-bottom: 16px;
+  padding: 17px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 13px;
+
+  box-shadow:
+    0 4px 14px rgba(17, 24, 39, 0.035);
+}
+
+.progress-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-bottom: 9px;
+
+  color: #374151;
+
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.progress-header span:last-child {
+  color: #69bee1;
+
+  font-weight: 750;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 7px;
+
+  overflow: hidden;
+
+  background: #edf0f3;
+
+  border-radius: 999px;
+}
+
+.progress-fill {
+  height: 100%;
+
+  background: #69bee1;
+
+  border-radius: inherit;
+
+  transition: width 0.35s ease;
+}
+
+.progress-container > p {
+  margin: 7px 0 0;
+
+  color: #9ca3af;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   RESET WORKOUT
+   ========================================================= */
+
+.reset-workout-button {
+  margin-bottom: 20px;
+
+  padding: 8px 13px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+
+  color: #6b7280;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.reset-workout-button:hover {
+  background: #f9fafb;
+
+  border-color: #d1d5db;
+
+  color: #374151;
+}
+
+.reset-workout-button:focus-visible {
+  outline: 2px solid #69bee1;
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   WORKOUT DAY
+   ========================================================= */
+
+.workout-day {
+  margin-bottom: 18px;
+  padding: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+
+  box-shadow:
+    0 4px 14px rgba(17, 24, 39, 0.035);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.workout-day:hover {
+  border-color: #d9e7ed;
+
+  box-shadow:
+    0 7px 20px rgba(17, 24, 39, 0.055);
+}
+
+.day-header {
+  margin-bottom: 17px;
+}
+
+.day-header span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #69bee1;
+
+  font-size: 9px;
+  font-weight: 750;
+
+  letter-spacing: 0.8px;
+}
+
+.day-header h3 {
+  margin: 0 0 4px;
+
+  color: #111827;
+
+  font-size: 17px;
+  font-weight: 720;
+}
+
+.day-header p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   EXERCISE LIST
+   ========================================================= */
+
+.exercise-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 9px;
+
+  margin-bottom: 17px;
+}
+
+
+/* =========================================================
+   EXERCISE CARD
+   ========================================================= */
+
+.exercise-card {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 18px;
+
+  padding: 14px 15px;
+
+  background: #fbfcfd;
+
+  border: 1px solid #e8ecef;
+  border-radius: 10px;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.exercise-card:hover {
+  background: #f8fbfc;
+
+  border-color: #d6e8ef;
+
+  transform: translateY(-1px);
+}
+
+.exercise-info {
+  min-width: 0;
+}
+
+.exercise-info h4 {
+  margin: 0 0 9px;
+
+  color: #111827;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.exercise-details {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 18px;
+}
+
+.exercise-details span {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.exercise-details strong {
+  color: #374151;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.exercise-details small {
+  margin: 0;
+
+  color: #9ca3af;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   COMPLETED EXERCISE
+   ========================================================= */
+
+.exercise-card.completed {
+  background: #f6fbfd;
+
+  border-color: #cdeaf3;
+}
+
+.exercise-card.completed h4 {
+  color: #7b8791;
+
+  text-decoration: line-through;
+}
+
+
+/* =========================================================
+   COMPLETE BUTTON
+   ========================================================= */
+
+.complete-button {
+  flex-shrink: 0;
+
+  padding: 8px 12px;
+
+  background: #69bee1;
+
+  border: 1px solid #69bee1;
+  border-radius: 8px;
+
+  color: #ffffff;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.complete-button:hover {
+  background: #52afd6;
+
+  border-color: #52afd6;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 4px 10px rgba(105, 190, 225, 0.25);
+}
+
+.complete-button:focus-visible {
+  outline: 2px solid #69bee1;
+  outline-offset: 2px;
+}
+
+.complete-button:disabled {
+  background: #e8f5f9;
+
+  border-color: #d6edf4;
+
+  color: #5d9bb2;
+
+  cursor: default;
+
+  transform: none;
+
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   WEIGHT INPUT
+   ========================================================= */
+
+.weight-input {
+  width: 75px;
+
+  padding: 7px 9px;
+
+  background: #ffffff;
+
+  border: 1px solid #dfe5e8;
+  border-radius: 7px;
+
+  color: #111827;
+
+  font-size: 11px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.weight-input:focus {
+  border-color: #69bee1;
+
+  box-shadow:
+    0 0 0 3px rgba(105, 190, 225, 0.12);
+}
+
+.weight-input::placeholder {
+  color: #b0b7bd;
+}
+
+
+/* =========================================================
+   DAY COMPLETION
+   ========================================================= */
+
+.day-completion {
+  display: flex;
+
+  justify-content: flex-end;
+
+  padding-top: 3px;
+}
+
+.day-complete-button {
+  padding: 9px 14px;
+
+  background: #ffffff;
+
+  border: 1px solid #cfd9de;
+  border-radius: 8px;
+
+  color: #4b5563;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.day-complete-button:hover:not(:disabled) {
+  background: #eef9fd;
+
+  border-color: #69bee1;
+
+  color: #247da0;
+
+  transform: translateY(-1px);
+}
+
+.day-complete-button:disabled {
+  background: #eef9fd;
+
+  border-color: #bde3ef;
+
+  color: #4b9ab6;
+
+  cursor: default;
+}
+
+.day-complete-button:focus-visible {
+  outline: 2px solid #69bee1;
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   MOBILE WORKOUT
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .workout-page {
+    padding: 22px 0 35px;
+  }
+
+  .workout-page-header h1 {
+    font-size: 26px;
+  }
+
+  .split-selector,
+  .workout-day,
+  .progress-container {
+    padding: 16px;
+  }
+
+  .split-buttons {
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .split-buttons button {
+    width: 100%;
+  }
+
+  .exercise-card {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 12px;
+  }
+
+  .exercise-info {
+    width: 100%;
+  }
+
+  .exercise-details {
+    gap: 13px;
+  }
+
+  .complete-button {
+    width: 100%;
+  }
+
+  .day-completion {
+    justify-content: stretch;
+  }
+
+  .day-complete-button {
+    width: 100%;
+  }
+
+  .weight-input {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 420px) {
+
+  .workout-page-header h1 {
+    font-size: 23px;
+  }
+
+  .split-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .progress-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 4px;
+  }
+
+  .exercise-details {
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 9px;
+  }
+}
+/* =========================================================
+   FITSTATS — UNIFIED PROFESSIONAL THEME OVERRIDES
+   Added after the existing styles so current functionality
+   and component structure remain unchanged.
+========================================================= */
+
+:root {
+  --fit-accent: #69bee1;
+  --fit-accent-dark: #3f9fc7;
+  --fit-accent-soft: #eef9fd;
+  --fit-accent-border: #bfe5f2;
+  --fit-bg: #f4f7f9;
+  --fit-surface: #ffffff;
+  --fit-surface-soft: #f8fafb;
+  --fit-border: #e3e9ed;
+  --fit-text: #17212b;
+  --fit-text-secondary: #66737d;
+  --fit-text-muted: #97a3ab;
+  --fit-dark: #17232d;
+  --fit-dark-2: #22313c;
+  --fit-shadow: 0 8px 26px rgba(23, 33, 43, 0.055);
+  --fit-shadow-hover: 0 12px 30px rgba(23, 33, 43, 0.09);
+  --fit-radius: 14px;
+}
+
+html {
+  background: var(--fit-bg);
+}
+
+body {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(105,190,225,.10), transparent 28%),
+    var(--fit-bg);
+  color: var(--fit-text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Arial, sans-serif;
+  line-height: 1.5;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================
+   APP / SIDEBAR
+========================= */
+
+.app,
+.app-layout {
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: linear-gradient(180deg, #17232d 0%, #111b23 100%);
+  border-right: 1px solid rgba(255,255,255,.06);
+  box-shadow: 12px 0 35px rgba(16, 26, 34, .10);
+}
+
+.sidebar-header {
+  border-bottom-color: rgba(255,255,255,.08);
+}
+
+.sidebar-logo {
+  letter-spacing: -.5px;
+}
+
+.sidebar-logo::after {
+  content: ".";
+  color: var(--fit-accent);
+}
+
+.sidebar-section-title {
+  color: #71818c;
+}
+
+.sidebar-nav a {
+  color: #aebbc3;
+  border: 1px solid transparent;
+}
+
+.sidebar-nav a:hover {
+  background: rgba(105,190,225,.10);
+  color: #fff;
+  border-color: rgba(105,190,225,.12);
+}
+
+.sidebar-nav a.active {
+  background: var(--fit-accent);
+  color: #fff;
+  box-shadow: 0 5px 16px rgba(105,190,225,.22);
+}
+
+.sidebar-toggle {
+  border-color: var(--fit-border);
+  background: var(--fit-surface);
+  color: var(--fit-text);
+  box-shadow: var(--fit-shadow);
+}
+
+.sidebar-toggle:hover {
+  background: var(--fit-accent-soft);
+  border-color: var(--fit-accent-border);
+  color: var(--fit-accent-dark);
+}
+
+.sidebar-close:hover {
+  background: rgba(105,190,225,.10);
+}
+
+.main-content {
+  background: transparent;
+}
+
+.page-content {
+  background: transparent;
+}
+
+/* =========================
+   SHARED PAGE LANGUAGE
+========================= */
+
+.workout-page,
+.diet-page,
+.calculator-page,
+.dashboard-page,
+.planner-page {
+  color: var(--fit-text);
+}
+
+.workout-page-header h1,
+.diet-page-header h1,
+.calculator-page-header h1,
+.dashboard-header h1,
+.page-placeholder h1 {
+  color: var(--fit-text);
+  letter-spacing: -.7px;
+}
+
+.workout-page-header p,
+.diet-page-header p,
+.calculator-page-header p,
+.dashboard-header p,
+.page-placeholder p {
+  color: var(--fit-text-secondary);
+}
+
+.workout-eyebrow,
+.diet-eyebrow,
+.calculator-eyebrow,
+.dashboard-eyebrow,
+.dashboard-card-eyebrow {
+  color: var(--fit-accent-dark);
+}
+
+/* =========================
+   SHARED CARDS
+========================= */
+
+.split-selector,
+.workout-day,
+.progress-container,
+.calendar-container,
+.calculator-card,
+.result-card,
+.goal-calorie-card,
+.diet-target-card,
+.diet-goal-card,
+.dashboard-card,
+.dashboard-stat-card,
+.planner-progress,
+.planner-stat-card,
+.task-container {
+  background: var(--fit-surface);
+  border-color: var(--fit-border);
+  box-shadow: var(--fit-shadow);
+}
+
+.split-selector:hover,
+.workout-day:hover,
+.dashboard-card:hover,
+.dashboard-stat-card:hover,
+.planner-stat-card:hover {
+  border-color: #d5e6ed;
+}
+
+/* =========================
+   WORKOUT
+========================= */
+
+.split-selector h2,
+.workout-header h2,
+.day-header h3,
+.exercise-info h4,
+.workout-page-header h1 {
+  color: var(--fit-text);
+}
+
+.split-description,
+.workout-header p,
+.day-header p,
+.exercise-details small {
+  color: var(--fit-text-secondary);
+}
+
+.split-buttons button {
+  background: var(--fit-surface-soft);
+  border-color: var(--fit-border);
+  color: #44515a;
+}
+
+.split-buttons button:hover {
+  background: var(--fit-accent-soft);
+  border-color: var(--fit-accent-border);
+  color: var(--fit-accent-dark);
+}
+
+.split-buttons button.active,
+.split-buttons button[aria-selected="true"] {
+  background: var(--fit-accent);
+  border-color: var(--fit-accent);
+  color: #fff;
+  box-shadow: 0 5px 14px rgba(105,190,225,.20);
+}
+
+.progress-container {
+  border-radius: var(--fit-radius);
+}
+
+.progress-bar,
+.planner-progress-bar,
+.planner-stat-progress-bar {
+  background: #e8eef1;
+}
+
+.progress-fill,
+.planner-progress-fill,
+.planner-stat-progress-fill {
+  background: linear-gradient(90deg, var(--fit-accent), #86cce6);
+}
+
+.exercise-card {
+  background: var(--fit-surface-soft);
+  border-color: var(--fit-border);
+}
+
+.exercise-card:hover {
+  background: #f5fbfd;
+  border-color: var(--fit-accent-border);
+}
+
+.complete-button {
+  background: var(--fit-accent);
+  border-color: var(--fit-accent);
+}
+
+.complete-button:hover {
+  background: var(--fit-accent-dark);
+  border-color: var(--fit-accent-dark);
+}
+
+.reset-workout-button,
+.day-complete-button {
+  background: var(--fit-surface);
+  border-color: var(--fit-border);
+}
+
+.reset-workout-button:hover,
+.day-complete-button:hover:not(:disabled) {
+  background: var(--fit-accent-soft);
+  border-color: var(--fit-accent-border);
+  color: var(--fit-accent-dark);
+}
+
+.weight-input input,
+.weight-input {
+  border-color: #d4e0e5;
+  background: #fff;
+}
+
+.weight-input input:focus,
+.weight-input:focus {
+  border-color: var(--fit-accent);
+  box-shadow: 0 0 0 3px rgba(105,190,225,.12);
+}
+
+/* =========================
+   PLANNER / CALENDAR
+========================= */
+
+.planner-page {
+  padding-top: 30px;
+}
+
+.calendar-container {
+  border-radius: 16px;
+}
+
+.calendar-header h2,
+.selected-date h3,
+.task-header h3,
+.planner-progress-header h3,
+.planner-stats-header h3 {
+  color: var(--fit-text);
+}
+
+.calendar-header button {
+  background: var(--fit-dark);
+  border: 1px solid var(--fit-dark);
+  transition: .2s ease;
+}
+
+.calendar-header button:hover {
+  background: var(--fit-accent);
+  border-color: var(--fit-accent);
+}
+
+.calendar-weekdays span {
+  color: var(--fit-text-muted);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+
+.calendar-day {
+  background: #fbfcfd;
+  border-color: var(--fit-border);
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+
+.calendar-day:hover {
+  background: var(--fit-accent-soft);
+  border-color: var(--fit-accent-border);
+  transform: translateY(-1px);
+}
+
+.calendar-day.today {
+  border-color: var(--fit-accent);
+  box-shadow: inset 0 0 0 1px var(--fit-accent);
+}
+
+.calendar-day.selected {
+  background: var(--fit-dark);
+  border-color: var(--fit-dark);
+  box-shadow: 0 6px 15px rgba(23,35,45,.14);
+}
+
+.calendar-day.selected:hover {
+  background: #22333f;
+}
+
+.calendar-task-info {
+  color: var(--fit-accent-dark);
+}
+
+.calendar-day.selected .calendar-task-info {
+  color: #bfe7f4;
+}
+
+.selected-date {
+  background: var(--fit-accent-soft);
+  border: 1px solid var(--fit-accent-border);
+}
+
+.selected-date p {
+  color: var(--fit-text-secondary);
+}
+
+/* Planner progress */
+
+.planner-progress {
+  background: var(--fit-surface-soft);
+}
+
+.planner-progress-percentage,
+.planner-stat-value,
+.planner-stat-info h4 {
+  color: var(--fit-text);
+}
+
+.planner-stat {
+  background: #fff;
+  border-color: var(--fit-border);
+}
+
+.planner-stat-icon {
+  background: var(--fit-accent-soft);
+}
+
+/* =========================
+   TASK SYSTEM
+========================= */
+
+.task-container {
+  border-radius: 16px;
+}
+
+.add-task-card {
+  background: var(--fit-surface-soft);
+  border-color: var(--fit-border);
+}
+
+.add-task-input-row input,
+.edit-task > input {
+  border-color: #d4e0e5;
+  background: #fff;
+}
+
+.add-task-input-row input:focus,
+.edit-task > input:focus {
+  border-color: var(--fit-accent);
+  box-shadow: 0 0 0 3px rgba(105,190,225,.12);
+}
+
+.add-task-button,
+.save-task {
+  background: var(--fit-accent);
+}
+
+.add-task-button:hover,
+.save-task:hover {
+  background: var(--fit-accent-dark);
+}
+
+.category-option.active,
+.edit-category-button.active {
+  border-color: var(--fit-accent);
+  background: var(--fit-accent);
+  color: #fff;
+}
+
+.category-option:hover,
+.edit-category-button:hover {
+  background: var(--fit-accent-soft);
+  border-color: var(--fit-accent-border);
+}
+
+.task-item:hover {
+  border-color: #cfe1e8;
+  box-shadow: 0 5px 15px rgba(23,33,43,.05);
+}
+
+.custom-checkbox {
+  border-color: #c9d6dc;
+}
+
+.task-checkbox input:checked + .custom-checkbox {
+  border-color: var(--fit-accent);
+  background: var(--fit-accent);
+}
+
+.task-title,
+.task-header h3,
+.task-count strong {
+  color: var(--fit-text);
+}
+
+.category-workout,
+.category-diet,
+.category-water,
+.category-cardio,
+.category-personal {
+  background: var(--fit-accent-soft);
+  color: var(--fit-accent-dark);
+}
+
+.edit-task-button:hover,
+.delete-task:hover {
+  background: var(--fit-accent-soft);
+  color: var(--fit-accent-dark);
+}
+
+/* =========================
+   CALCULATOR
+========================= */
+
+.calculator-page {
+  padding-top: 30px;
+}
+
+.calculator-card,
+.calculator-empty-results {
+  box-shadow: var(--fit-shadow);
+}
+
+.form-group input,
+.input-with-unit input {
+  border-color: #d4e0e5;
+}
+
+.form-group input:focus,
+.input-with-unit input:focus {
+  border-color: var(--fit-accent);
+  box-shadow: 0 0 0 3px rgba(105,190,225,.12);
+}
+
+.gender-option:hover,
+.activity-option:hover,
+.goal-option:hover {
+  background: var(--fit-accent-soft);
+  border-color: var(--fit-accent-border);
+}
+
+.gender-option.active,
+.activity-option.active,
+.goal-option.active {
+  background: var(--fit-accent);
+  border-color: var(--fit-accent);
+  color: #fff;
+  box-shadow: 0 5px 14px rgba(105,190,225,.18);
+}
+
+.calculate-button {
+  background: var(--fit-accent);
+}
+
+.calculate-button:hover {
+  background: var(--fit-accent-dark);
+}
+
+.result-primary-card {
+  background: linear-gradient(135deg, #17232d 0%, #243744 100%);
+}
+
+.bmi-category {
+  background: rgba(105,190,225,.18);
+  color: #bde9f6;
+}
+
+.goal-calorie-card,
+.result-card,
+.result-note {
+  border-color: var(--fit-border);
+}
+
+/* =========================
+   DIET
+========================= */
+
+.diet-page {
+  padding-top: 30px;
+}
+
+.diet-target-card,
+.diet-goal-card {
+  box-shadow: var(--fit-shadow);
+}
+
+.diet-input-wrapper:focus-within {
+  border-color: var(--fit-accent);
+  box-shadow: 0 0 0 3px rgba(105,190,225,.12);
+}
+
+.diet-preference-card,
+.meal-card,
+.meal-summary-card,
+.meal-summary-item,
+.diet-goal-card,
+.diet-target-card {
+  border-color: var(--fit-border);
+}
+
+.diet-preference-card:hover,
+.meal-card:hover {
+  border-color: var(--fit-accent-border);
+  box-shadow: 0 8px 22px rgba(23,33,43,.06);
+}
+
+.diet-preference-card.active {
+  border-color: var(--fit-accent);
+  background: var(--fit-accent-soft);
+  box-shadow: 0 7px 20px rgba(105,190,225,.12);
+}
+
+.diet-preference-card.active h3 {
+  color: var(--fit-accent-dark);
+}
+
+.diet-goal-icon,
+.diet-preference-icon {
+  background: var(--fit-accent-soft);
+}
+
+.meal-card {
+  background: #fff;
+}
+
+.meal-card:hover {
+  transform: translateY(-2px);
+}
+
+.meal-eaten-button,
+.change-meal-button {
+  border-radius: 9px;
+}
+
+.meal-eaten-button {
+  background: var(--fit-accent);
+  border-color: var(--fit-accent);
+}
+
+.meal-eaten-button:hover {
+  background: var(--fit-accent-dark);
+  border-color: var(--fit-accent-dark);
+}
+
+.change-meal-button:hover {
+  background: var(--fit-accent-soft);
+  border-color: var(--fit-accent-border);
+  color: var(--fit-accent-dark);
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard-page {
+  padding-top: 30px;
+}
+
+.dashboard-header {
+  margin-bottom: 24px;
+}
+
+.dashboard-stat-card,
+.dashboard-card {
+  border-radius: var(--fit-radius);
+}
+
+.dashboard-stat-icon {
+  background: var(--fit-accent-soft);
+  color: var(--fit-accent-dark);
+}
+
+.dashboard-stat-card strong,
+.dashboard-card h2,
+.dashboard-card h3,
+.dashboard-card strong {
+  color: var(--fit-text);
+}
+
+.dashboard-progress-fill,
+.dashboard-card .progress-fill {
+  background: linear-gradient(90deg, var(--fit-accent), #86cce6);
+}
+
+.dashboard-card a,
+.dashboard-link {
+  color: var(--fit-accent-dark);
+}
+
+.dashboard-card button {
+  transition: .2s ease;
+}
+
+.dashboard-card button:hover {
+  border-color: var(--fit-accent-border);
+}
+
+.dashboard-macro-item {
+  background: var(--fit-surface-soft);
+  border-color: var(--fit-border);
+}
+
+.dashboard-macro-item strong {
+  color: var(--fit-text);
+}
+
+/* =========================
+   ACCESSIBILITY / FOCUS
+========================= */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--fit-accent);
+  outline-offset: 2px;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #b9cbd3 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #b9cbd3;
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #8faab6;
+}
+
+/* =========================
+   MOBILE GLOBAL
+========================= */
+
+@media (max-width: 900px) {
+  .dashboard-page,
+  .calculator-page,
+  .diet-page,
+  .planner-page,
+  .workout-page {
+    width: min(100% - 28px, 1100px);
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard-page,
+  .calculator-page,
+  .diet-page,
+  .planner-page,
+  .workout-page {
+    width: calc(100% - 24px);
+    padding-top: 20px;
+  }
+
+  .calendar-container,
+  .calculator-card,
+  .task-container,
+  .workout-day,
+  .split-selector,
+  .progress-container {
+    border-radius: 12px;
+  }
+
+  .calendar-grid,
+  .calendar-weekdays {
+    gap: 5px;
+  }
+
+  .calendar-day {
+    min-height: 58px;
+    padding: 7px;
+  }
+
+  .calendar-day-number {
+    font-size: 13px;
+  }
+
+  .calendar-task-info {
+    font-size: 9px;
+  }
+}
