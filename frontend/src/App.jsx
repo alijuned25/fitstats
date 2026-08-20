@@ -13,21 +13,28 @@ import Workout from "./features/workout/Workout";
 import Calendar from "./features/planner/Calendar";
 import Calculator from "./features/calculator/Calculator";
 import Diet from "./features/diet/Diet";
+import AICoach from "./features/ai/AICoach";
 
 
 function App() {
-  const [sidebarOpen, setSidebarOpen] =
-    useState(false);
+
+  const [
+    sidebarOpen,
+    setSidebarOpen,
+  ] = useState(false);
 
 
   function toggleSidebar() {
+
     setSidebarOpen(
       (previous) => !previous
     );
+
   }
 
 
   return (
+
     <BrowserRouter>
 
       <div className="app">
@@ -70,7 +77,9 @@ function App() {
 
             <Route
               path="/dashboard"
-              element={<Dashboard />}
+              element={
+                <Dashboard />
+              }
             />
 
 
@@ -80,7 +89,9 @@ function App() {
 
             <Route
               path="/workout"
-              element={<Workout />}
+              element={
+                <Workout />
+              }
             />
 
 
@@ -90,7 +101,9 @@ function App() {
 
             <Route
               path="/planner"
-              element={<Calendar />}
+              element={
+                <Calendar />
+              }
             />
 
 
@@ -100,7 +113,9 @@ function App() {
 
             <Route
               path="/calculator"
-              element={<Calculator />}
+              element={
+                <Calculator />
+              }
             />
 
 
@@ -110,7 +125,9 @@ function App() {
 
             <Route
               path="/diet"
-              element={<Diet />}
+              element={
+                <Diet />
+              }
             />
 
 
@@ -121,18 +138,7 @@ function App() {
             <Route
               path="/ai"
               element={
-                <div className="page-placeholder">
-
-                  <h1>
-                    AI Coach
-                  </h1>
-
-                  <p>
-                    Your personal fitness
-                    assistant is coming soon.
-                  </p>
-
-                </div>
+                <AICoach />
               }
             />
 
@@ -143,7 +149,9 @@ function App() {
       </div>
 
     </BrowserRouter>
+
   );
+
 }
 
 
