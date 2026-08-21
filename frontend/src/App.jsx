@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import {
   BrowserRouter,
@@ -18,6 +18,74 @@ import AICoach from "./features/ai/AICoach";
 
 function App() {
 
+  /*
+   * ==========================================
+   * THEME
+   * ==========================================
+   */
+
+  const [
+    theme,
+    setTheme,
+  ] = useState(() => {
+
+    const savedTheme =
+      localStorage.getItem(
+        "fitstatsTheme"
+      );
+
+    return savedTheme === "dark"
+      ? "dark"
+      : "light";
+
+  });
+
+
+  /*
+   * ==========================================
+   * APPLY THEME
+   * ==========================================
+   */
+
+  useEffect(() => {
+
+    document.documentElement.setAttribute(
+      "data-theme",
+      theme
+    );
+
+    localStorage.setItem(
+      "fitstatsTheme",
+      theme
+    );
+
+  }, [theme]);
+
+
+  /*
+   * ==========================================
+   * TOGGLE THEME
+   * ==========================================
+   */
+
+  function handleThemeToggle() {
+
+    setTheme(
+      (previous) =>
+        previous === "light"
+          ? "dark"
+          : "light"
+    );
+
+  }
+
+
+  /*
+   * ==========================================
+   * SIDEBAR
+   * ==========================================
+   */
+
   const [
     sidebarOpen,
     setSidebarOpen,
@@ -33,6 +101,12 @@ function App() {
   }
 
 
+  /*
+   * ==========================================
+   * RENDER
+   * ==========================================
+   */
+
   return (
 
     <BrowserRouter>
@@ -42,6 +116,10 @@ function App() {
         <Sidebar
           isOpen={sidebarOpen}
           onToggle={toggleSidebar}
+          theme={theme}
+          onThemeToggle={
+            handleThemeToggle
+          }
         />
 
 
@@ -63,7 +141,8 @@ function App() {
                   </h1>
 
                   <p>
-                    Your fitness journey starts here.
+                    Your fitness journey
+                    starts here.
                   </p>
 
                 </div>
@@ -132,7 +211,7 @@ function App() {
 
 
             {/* =========================
-                AI COACH
+                SENSEI
             ========================= */}
 
             <Route
@@ -151,7 +230,6 @@ function App() {
     </BrowserRouter>
 
   );
-
 }
 
 

@@ -16113,5 +16113,2243 @@ textarea:focus-visible {
   color: #ffffff;
 }
 
+/* =========================================================
+   PREMIUM THEME TOGGLE
+   ========================================================= */
+
+.sidebar-theme-section {
+  margin-top: auto;
+  padding-top: 16px;
+
+  border-top: 1px solid #e8ecef;
+}
+
+[data-theme="dark"] .sidebar-theme-section {
+  border-top-color: #2a343d;
+}
+
+
+/* Label */
+
+.sidebar-theme-label {
+  margin: 0 0 8px 2px;
+
+  color: #9ca3af;
+
+  font-size: 8px;
+  font-weight: 750;
+
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+}
+
+
+/* Main toggle */
+
+.theme-toggle {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: 48px;
+
+  padding: 6px 8px;
+
+  background: #f8fafb;
+
+  border: 1px solid #e3e8eb;
+  border-radius: 12px;
+
+  color: #374151;
+
+  font-family: inherit;
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  border-color: #cfe5ed;
+
+  box-shadow:
+    0 5px 14px rgba(
+      17,
+      24,
+      39,
+      0.06
+    );
+}
+
+.theme-toggle:active {
+  transform: scale(0.99);
+}
+
+
+/* Dark state */
+
+.theme-toggle.dark {
+  background:
+    linear-gradient(
+      135deg,
+      #172028,
+      #1c2932
+    );
+
+  border-color: #344650;
+
+  color: #e5edf2;
+}
+
+.theme-toggle.dark:hover {
+  border-color: #46606d;
+
+  box-shadow:
+    0 6px 16px rgba(
+      0,
+      0,
+      0,
+      0.22
+    );
+}
+
+
+/* Icon container */
+
+.theme-toggle-icon {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 31px;
+  height: 31px;
+
+  flex-shrink: 0;
+
+  background: #ffffff;
+
+  border: 1px solid #e6eaed;
+
+  border-radius: 9px;
+
+  font-size: 13px;
+
+  box-shadow:
+    0 2px 6px rgba(
+      17,
+      24,
+      39,
+      0.05
+    );
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.theme-toggle.dark .theme-toggle-icon {
+  background: #24323b;
+
+  border-color: #3b4d58;
+
+  box-shadow:
+    0 2px 7px rgba(
+      0,
+      0,
+      0,
+      0.18
+    );
+}
+
+
+/* Label */
+
+.theme-toggle-text {
+  position: relative;
+  z-index: 2;
+
+  margin-left: 9px;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.1px;
+}
+
+
+/* Switch */
+
+.theme-toggle-track {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+
+  width: 36px;
+  height: 20px;
+
+  margin-left: auto;
+
+  padding: 2px;
+
+  background: #dbe2e6;
+
+  border-radius: 999px;
+
+  transition:
+    background-color 0.25s ease;
+}
+
+.theme-toggle.dark .theme-toggle-track {
+  background:
+    #416b7b;
+}
+
+
+/* Sliding knob */
+
+.theme-toggle-thumb {
+  display: block;
+
+  width: 16px;
+  height: 16px;
+
+  background: #ffffff;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 2px 5px rgba(
+      0,
+      0,
+      0,
+      0.18
+    );
+
+  transform: translateX(0);
+
+  transition:
+    transform 0.3s
+      cubic-bezier(
+        0.4,
+        0,
+        0.2,
+        1
+      ),
+    box-shadow 0.25s ease;
+}
+
+.theme-toggle.dark .theme-toggle-thumb {
+  transform:
+    translateX(16px);
+
+  box-shadow:
+    0 2px 6px rgba(
+      0,
+      0,
+      0,
+      0.28
+    );
+}
+
+
+/* Focus */
+
+.theme-toggle:focus-visible {
+  outline:
+    2px solid #69bee1;
+
+  outline-offset: 2px;
+}
+
+
+
+/* =========================================================
+   FITSTATS THEME SYSTEM
+   LIGHT + DARK MODE
+   Paste this entire block at the bottom of index.css
+   ========================================================= */
+
+
+/* =========================================================
+   LIGHT THEME VARIABLES
+   ========================================================= */
+
+:root {
+  --theme-bg: #f5f7f9;
+
+  --theme-surface: #ffffff;
+  --theme-surface-soft: #f9fafb;
+  --theme-surface-hover: #f4fbfd;
+
+  --theme-text: #111827;
+  --theme-text-secondary: #374151;
+  --theme-text-muted: #6b7280;
+  --theme-text-light: #9ca3af;
+
+  --theme-border: #e5e7eb;
+  --theme-border-soft: #e9edef;
+
+  --theme-accent: #69bee1;
+  --theme-accent-dark: #52afd6;
+  --theme-accent-bg: #eef9fd;
+  --theme-accent-border: #cfe8f0;
+
+  --theme-success-bg: #eef8f1;
+  --theme-success: #2f9e5b;
+
+  --theme-danger-bg: #fff7f7;
+  --theme-danger: #dc2626;
+
+  --theme-shadow:
+    0 6px 20px rgba(
+      17,
+      24,
+      39,
+      0.045
+    );
+
+  --theme-input-bg: #ffffff;
+}
+
+
+/* =========================================================
+   DARK THEME VARIABLES
+   ========================================================= */
+
+[data-theme="dark"] {
+  --theme-bg: #0d1318;
+
+  --theme-surface: #151c22;
+  --theme-surface-soft: #1a232b;
+  --theme-surface-hover: #1d2a32;
+
+  --theme-text: #f3f6f8;
+  --theme-text-secondary: #d4dde2;
+  --theme-text-muted: #9aa7b0;
+  --theme-text-light: #687780;
+
+  --theme-border: #2a3640;
+  --theme-border-soft: #222d35;
+
+  --theme-accent: #69bee1;
+  --theme-accent-dark: #8bd3eb;
+  --theme-accent-bg: #162c37;
+  --theme-accent-border: #365563;
+
+  --theme-success-bg: #14251b;
+  --theme-success: #6fd28d;
+
+  --theme-danger-bg: #2b191b;
+  --theme-danger: #ff8189;
+
+  --theme-shadow:
+    0 10px 28px rgba(
+      0,
+      0,
+      0,
+      0.28
+    );
+
+  --theme-input-bg: #1a232b;
+}
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+html {
+  background: var(--theme-bg);
+}
+
+body {
+  background-color: var(--theme-bg);
+  color: var(--theme-text);
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+#root {
+  background: var(--theme-bg);
+  color: var(--theme-text);
+}
+
+.app {
+  background: var(--theme-bg);
+  color: var(--theme-text);
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.main-content {
+  background: var(--theme-bg);
+  color: var(--theme-text);
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+
+/* =========================================================
+   UNIVERSAL TEXT
+   ========================================================= */
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+  color: var(--theme-text);
+}
+
+[data-theme="dark"] p {
+  color: var(--theme-text-muted);
+}
+
+[data-theme="dark"] label {
+  color: var(--theme-text-secondary);
+}
+
+[data-theme="dark"] small {
+  color: var(--theme-text-muted);
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+[data-theme="dark"] .sidebar {
+  background:
+    linear-gradient(
+      180deg,
+      #10171d 0%,
+      #0d1318 100%
+    );
+
+  color: var(--theme-text);
+
+  border-color: var(--theme-border);
+
+  box-shadow:
+    8px 0 28px rgba(
+      0,
+      0,
+      0,
+      0.18
+    );
+}
+
+[data-theme="dark"] .sidebar-logo {
+  color: #f3f6f8;
+}
+
+[data-theme="dark"] .sidebar-section-title {
+  color: #687780;
+}
+
+[data-theme="dark"] .sidebar-nav a {
+  color: #9caab3;
+}
+
+[data-theme="dark"] .sidebar-nav a:hover {
+  background: #19242c;
+  color: #eef4f7;
+}
+
+[data-theme="dark"] .sidebar-nav a.active {
+  background:
+    linear-gradient(
+      135deg,
+      #193440,
+      #17303a
+    );
+
+  color: #69bee1;
+
+  box-shadow:
+    inset 0 0 0 1px
+    rgba(
+      105,
+      190,
+      225,
+      0.08
+    );
+}
+
+[data-theme="dark"] .sidebar-close {
+  color: #aebbc3;
+}
+
+
+/* =========================================================
+   THEME TOGGLE
+   ========================================================= */
+
+.sidebar-theme-section {
+  margin-top: auto;
+
+  padding-top: 16px;
+
+  border-top:
+    1px solid #e8ecef;
+}
+
+[data-theme="dark"] .sidebar-theme-section {
+  border-top-color:
+    #2a3640;
+}
+
+.sidebar-theme-label {
+  margin: 0 0 8px 2px;
+
+  color: #9ca3af;
+
+  font-size: 8px;
+
+  font-weight: 750;
+
+  letter-spacing: 0.9px;
+
+  text-transform: uppercase;
+}
+
+.theme-toggle {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  width: 100%;
+
+  height: 48px;
+
+  padding: 6px 8px;
+
+  background: #f8fafb;
+
+  border: 1px solid #e3e8eb;
+
+  border-radius: 12px;
+
+  color: #374151;
+
+  font-family: inherit;
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background: #eef9fd;
+
+  border-color: #cfe7ef;
+
+  box-shadow:
+    0 5px 14px rgba(
+      17,
+      24,
+      39,
+      0.06
+    );
+}
+
+.theme-toggle:active {
+  transform: scale(0.99);
+}
+
+.theme-toggle.dark {
+  background:
+    linear-gradient(
+      135deg,
+      #172028,
+      #1c2932
+    );
+
+  border-color: #344650;
+
+  color: #e5edf2;
+}
+
+.theme-toggle.dark:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #1a252d,
+      #21313b
+    );
+
+  border-color: #46606d;
+
+  box-shadow:
+    0 6px 16px rgba(
+      0,
+      0,
+      0,
+      0.22
+    );
+}
+
+.theme-toggle-icon {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 31px;
+
+  height: 31px;
+
+  flex-shrink: 0;
+
+  background: #ffffff;
+
+  border: 1px solid #e6eaed;
+
+  border-radius: 9px;
+
+  font-size: 13px;
+
+  box-shadow:
+    0 2px 6px rgba(
+      17,
+      24,
+      39,
+      0.05
+    );
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.theme-toggle.dark
+.theme-toggle-icon {
+  background: #24323b;
+
+  border-color: #3b4d58;
+
+  box-shadow:
+    0 2px 7px rgba(
+      0,
+      0,
+      0,
+      0.18
+    );
+}
+
+.theme-toggle-text {
+  position: relative;
+
+  z-index: 2;
+
+  margin-left: 9px;
+
+  font-size: 9px;
+
+  font-weight: 700;
+}
+
+.theme-toggle-track {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  width: 36px;
+
+  height: 20px;
+
+  margin-left: auto;
+
+  padding: 2px;
+
+  background: #dbe2e6;
+
+  border-radius: 999px;
+
+  transition:
+    background-color 0.25s ease;
+}
+
+.theme-toggle.dark
+.theme-toggle-track {
+  background: #416b7b;
+}
+
+.theme-toggle-thumb {
+  display: block;
+
+  width: 16px;
+
+  height: 16px;
+
+  background: #ffffff;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 2px 5px rgba(
+      0,
+      0,
+      0,
+      0.18
+    );
+
+  transform: translateX(0);
+
+  transition:
+    transform 0.3s
+      cubic-bezier(
+        0.4,
+        0,
+        0.2,
+        1
+      ),
+    box-shadow 0.25s ease;
+}
+
+.theme-toggle.dark
+.theme-toggle-thumb {
+  transform:
+    translateX(16px);
+
+  box-shadow:
+    0 2px 6px rgba(
+      0,
+      0,
+      0,
+      0.28
+    );
+}
+
+.theme-toggle:focus-visible {
+  outline:
+    2px solid #69bee1;
+
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   COMMON CARDS
+   ========================================================= */
+
+[data-theme="dark"] .calculator-card,
+[data-theme="dark"] .calculator-results-wrapper,
+[data-theme="dark"] .results-container,
+[data-theme="dark"] .result-card,
+[data-theme="dark"] .result-primary-card,
+[data-theme="dark"] .goal-calorie-card,
+[data-theme="dark"] .result-note,
+[data-theme="dark"] .workout-day,
+[data-theme="dark"] .split-selector,
+[data-theme="dark"] .exercise-card,
+[data-theme="dark"] .diet-goal-card,
+[data-theme="dark"] .diet-target-card,
+[data-theme="dark"] .diet-preference,
+[data-theme="dark"] .diet-preference-card,
+[data-theme="dark"] .meal-card,
+[data-theme="dark"] .meal-plan-header,
+[data-theme="dark"] .nutrition-tracker,
+[data-theme="dark"] .nutrition-overview,
+[data-theme="dark"] .planner-progress,
+[data-theme="dark"] .planner-stats,
+[data-theme="dark"] .planner-stat-card,
+[data-theme="dark"] .task-container,
+[data-theme="dark"] .task-item,
+[data-theme="dark"] .ai-chat-card {
+  background: var(--theme-surface);
+
+  border-color: var(--theme-border);
+
+  box-shadow: var(--theme-shadow);
+}
+
+
+/* =========================================================
+   CALCULATOR
+   ========================================================= */
+
+[data-theme="dark"] .calculator-section {
+  border-color: var(--theme-border);
+}
+
+[data-theme="dark"] .calculator-section-title h3 {
+  color: var(--theme-text);
+}
+
+[data-theme="dark"] .gender-option,
+[data-theme="dark"] .activity-option,
+[data-theme="dark"] .goal-option {
+  background: var(--theme-surface-soft);
+
+  border-color: var(--theme-border);
+
+  color: var(--theme-text-secondary);
+}
+
+[data-theme="dark"] .gender-option:hover,
+[data-theme="dark"] .activity-option:hover,
+[data-theme="dark"] .goal-option:hover {
+  background: var(--theme-surface-hover);
+
+  border-color: var(--theme-accent-border);
+}
+
+[data-theme="dark"] .gender-option.active,
+[data-theme="dark"] .activity-option.active,
+[data-theme="dark"] .goal-option.active {
+  background: var(--theme-accent-bg);
+
+  border-color: var(--theme-accent);
+
+  color: var(--theme-accent);
+}
+
+[data-theme="dark"] .input-with-unit span {
+  color: var(--theme-text-muted);
+}
+
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+[data-theme="dark"] input,
+[data-theme="dark"] textarea,
+[data-theme="dark"] select {
+  background: var(--theme-input-bg);
+
+  border-color: var(--theme-border);
+
+  color: var(--theme-text);
+}
+
+[data-theme="dark"] input:focus,
+[data-theme="dark"] textarea:focus,
+[data-theme="dark"] select:focus {
+  background: #1d2830;
+
+  border-color: var(--theme-accent);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(
+      105,
+      190,
+      225,
+      0.12
+    );
+}
+
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder {
+  color: #6f7c85;
+}
+
+
+/* =========================================================
+   CALCULATOR RESULTS
+   ========================================================= */
+
+[data-theme="dark"] .bmi-category,
+[data-theme="dark"] .result-unit,
+[data-theme="dark"] .result-label {
+  color: var(--theme-text-muted);
+}
+
+
+/* =========================================================
+   WORKOUT
+   ========================================================= */
+
+[data-theme="dark"] .workout-header p,
+[data-theme="dark"] .day-header p {
+  color: var(--theme-text-muted);
+}
+
+[data-theme="dark"] .exercise-details span {
+  background: var(--theme-surface-soft);
+
+  border-color: var(--theme-border);
+}
+
+[data-theme="dark"] .exercise-details strong,
+[data-theme="dark"] .exercise-info h4 {
+  color: var(--theme-text);
+}
+
+[data-theme="dark"] .weight-input {
+  background: transparent;
+}
+
+[data-theme="dark"] .complete-button {
+  border-color: var(--theme-border);
+}
+
+[data-theme="dark"] .day-complete-button {
+  border-color: var(--theme-border);
+}
+
+
+/* =========================================================
+   DIET
+   ========================================================= */
+
+[data-theme="dark"] .diet-goal-card {
+  background:
+    linear-gradient(
+      135deg,
+      #17262e 0%,
+      #151c22 100%
+    );
+
+  border-color: var(--theme-border);
+}
+
+[data-theme="dark"] .diet-goal-icon,
+[data-theme="dark"] .diet-preference-icon,
+[data-theme="dark"] .meal-icon {
+  background: #1b2d37;
+
+  border-color: #304955;
+}
+
+[data-theme="dark"] .diet-preference-card {
+  background: var(--theme-surface-soft);
+}
+
+[data-theme="dark"] .diet-preference-card:hover {
+  background: var(--theme-surface-hover);
+
+  border-color: var(--theme-accent-border);
+}
+
+[data-theme="dark"] .diet-preference-card.active {
+  background: #172f3a;
+
+  border-color: #5baaca;
+}
+
+[data-theme="dark"] .meal-nutrition > div,
+[data-theme="dark"] .meal-details span,
+[data-theme="dark"] .meal-match,
+[data-theme="dark"] .meal-ingredients {
+  background: var(--theme-surface-soft);
+
+  border-color: var(--theme-border-soft);
+}
+
+[data-theme="dark"] .meal-ingredients {
+  border-left-color: var(--theme-accent);
+}
+
+
+/* =========================================================
+   NUTRITION
+   ========================================================= */
+
+[data-theme="dark"] .nutrition-tracker-stats > div {
+  background: var(--theme-surface-soft);
+
+  border-color: var(--theme-border);
+}
+
+[data-theme="dark"] .meal-calorie-status {
+  background: var(--theme-accent-bg);
+
+  border-color: var(--theme-accent-border);
+}
+
+[data-theme="dark"] .meal-calorie-status.over {
+  background: var(--theme-danger-bg);
+
+  border-color: #573034;
+}
+
+
+/* =========================================================
+   PLANNER
+   ========================================================= */
+
+[data-theme="dark"] .planner-stat,
+[data-theme="dark"] .planner-stat-card {
+  background: var(--theme-surface-soft);
+
+  border-color: var(--theme-border);
+}
+
+[data-theme="dark"] .planner-stat-card:hover {
+  background: var(--theme-surface-hover);
+
+  border-color: var(--theme-accent-border);
+}
+
+[data-theme="dark"] .add-task-card,
+[data-theme="dark"] .empty-task-state {
+  background: var(--theme-surface-soft);
+
+  border-color: var(--theme-border);
+}
+
+[data-theme="dark"] .task-item {
+  background: var(--theme-surface-soft);
+
+  border-color: var(--theme-border);
+}
+
+[data-theme="dark"] .task-item:hover {
+  background: var(--theme-surface-hover);
+
+  border-color: var(--theme-accent-border);
+}
+
+[data-theme="dark"] .category-option,
+[data-theme="dark"] .edit-category-button,
+[data-theme="dark"] .edit-task-button,
+[data-theme="dark"] .delete-task,
+[data-theme="dark"] .cancel-task {
+  background: var(--theme-surface);
+
+  border-color: var(--theme-border);
+
+  color: var(--theme-text-muted);
+}
+
+[data-theme="dark"] .category-option:hover,
+[data-theme="dark"] .edit-category-button:hover {
+  background: var(--theme-accent-bg);
+
+  border-color: var(--theme-accent-border);
+
+  color: var(--theme-accent);
+}
+
+
+/* =========================================================
+   CALENDAR
+   ========================================================= */
+
+[data-theme="dark"] .calendar-header {
+  background: var(--theme-surface);
+
+  border-color: var(--theme-border);
+}
+
+[data-theme="dark"] .calendar-header h2 {
+  color: var(--theme-text);
+}
+
+[data-theme="dark"] .calendar-header button {
+  background: var(--theme-surface-soft);
+
+  border-color: var(--theme-border);
+
+  color: var(--theme-text-secondary);
+}
+
+[data-theme="dark"] .calendar-header button:hover {
+  background: var(--theme-accent-bg);
+
+  border-color: var(--theme-accent-border);
+
+  color: var(--theme-accent);
+}
+
+[data-theme="dark"] .calendar-weekdays span {
+  color: var(--theme-text-muted);
+}
+
+[data-theme="dark"] .calendar-day {
+  background: var(--theme-surface);
+
+  border-color: var(--theme-border);
+
+  color: var(--theme-text-secondary);
+}
+
+[data-theme="dark"] .calendar-day:hover {
+  background: var(--theme-surface-hover);
+
+  border-color: var(--theme-accent-border);
+}
+
+[data-theme="dark"] .calendar-day-number {
+  color: var(--theme-text-secondary);
+}
+
+[data-theme="dark"] .calendar-empty {
+  background: #11181e;
+}
+
+[data-theme="dark"] .selected-date {
+  background: var(--theme-surface);
+
+  border-color: var(--theme-border);
+
+  color: var(--theme-text);
+}
+
+
+/* =========================================================
+   SENSEI
+   ========================================================= */
+
+[data-theme="dark"] .ai-chat-card {
+  background: var(--theme-surface);
+
+  border-color: var(--theme-border);
+}
+
+[data-theme="dark"] .ai-message-list {
+  background:
+    linear-gradient(
+      180deg,
+      #151c22 0%,
+      #11181e 100%
+    );
+}
+
+[data-theme="dark"] .ai-message-bubble {
+  background: #1d272f;
+
+  border-color: #2d3942;
+
+  color: #d6dde2;
+}
+
+[data-theme="dark"] .ai-message.user
+.ai-message-bubble {
+  background: #4b9abd;
+
+  border-color: #4b9abd;
+
+  color: #ffffff;
+}
+
+[data-theme="dark"] .ai-message-bubble strong {
+  color: #f5f7f9;
+}
+
+[data-theme="dark"] .ai-message-bubble h1,
+[data-theme="dark"] .ai-message-bubble h2,
+[data-theme="dark"] .ai-message-bubble h3 {
+  color: #f5f7f9;
+}
+
+[data-theme="dark"] .ai-message.user
+.ai-message-bubble strong,
+[data-theme="dark"] .ai-message.user
+.ai-message-bubble h1,
+[data-theme="dark"] .ai-message.user
+.ai-message-bubble h2,
+[data-theme="dark"] .ai-message.user
+.ai-message-bubble h3 {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .ai-input-area {
+  background: #10171d;
+
+  border-top-color: var(--theme-border);
+}
+
+[data-theme="dark"] .ai-input-area textarea {
+  background: #1a232b;
+
+  border-color: #34434d;
+
+  color: #f3f6f8;
+}
+
+[data-theme="dark"] .ai-input-area textarea:focus {
+  background: #1d2830;
+
+  border-color: var(--theme-accent);
+}
+
+
+/* =========================================================
+   AI ERROR
+   ========================================================= */
+
+.ai-error-message {
+  margin:
+    0 14px 10px;
+
+  padding:
+    10px 12px;
+
+  background: #fff7f7;
+
+  border:
+    1px solid #f1cccc;
+
+  border-radius: 8px;
+
+  color: #dc2626;
+
+  font-size: 9px;
+
+  line-height: 1.4;
+}
+
+[data-theme="dark"] .ai-error-message {
+  background: var(--theme-danger-bg);
+
+  border-color: #573034;
+
+  color: var(--theme-danger);
+}
+
+
+/* =========================================================
+   COMMON BUTTONS
+   ========================================================= */
+
+[data-theme="dark"] button {
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+/* =========================================================
+   SUCCESS STATES
+   ========================================================= */
+
+[data-theme="dark"] .completed,
+[data-theme="dark"] .meal-completed-badge {
+  background: var(--theme-success-bg);
+
+  border-color:
+    #315f43;
+
+  color: var(--theme-success);
+}
+
+
+/* =========================================================
+   DARK SCROLLBAR
+   ========================================================= */
+
+[data-theme="dark"] ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: #0d1318;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: #34434d;
+
+  border-radius: 999px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: #47606d;
+}
+
+
+/* =========================================================
+   GLOBAL SMOOTH TRANSITIONS
+   ========================================================= */
+
+.sidebar,
+.main-content,
+.diet-goal-card,
+.diet-target-card,
+.diet-preference,
+.diet-preference-card,
+.meal-card,
+.meal-plan-header,
+.nutrition-tracker,
+.nutrition-overview,
+.planner-progress,
+.planner-stats,
+.planner-stat-card,
+.task-container,
+.task-item,
+.calendar-header,
+.calendar-day,
+.workout-day,
+.exercise-card,
+.calculator-card,
+.results-container,
+.result-card,
+.result-primary-card,
+.goal-calorie-card,
+.result-note,
+.ai-chat-card,
+.ai-message-list,
+.ai-message-bubble,
+.ai-input-area {
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .sidebar-theme-section {
+    margin-top: 15px;
+  }
+
+  .theme-toggle {
+    height: 46px;
+  }
+
+}
+
+/* =========================================================
+   FITSTATS DARK MODE - FINAL POLISH
+   ========================================================= */
+
+
+/* =========================================================
+   GLOBAL DARK PAGE SURFACES
+   ========================================================= */
+
+[data-theme="dark"] .page-content,
+[data-theme="dark"] .page-container,
+[data-theme="dark"] .planner-page,
+[data-theme="dark"] .calendar-page,
+[data-theme="dark"] .calculator-page,
+[data-theme="dark"] .diet-page,
+[data-theme="dark"] .workout-page,
+[data-theme="dark"] .ai-page {
+  background: var(--theme-bg) !important;
+
+  color: var(--theme-text);
+}
+
+
+/* =========================================================
+   CALENDAR - REMOVE WHITE AREAS
+   ========================================================= */
+
+[data-theme="dark"] .calendar-container,
+[data-theme="dark"] .calendar-wrapper,
+[data-theme="dark"] .calendar,
+[data-theme="dark"] .calendar-content {
+  background: var(--theme-bg) !important;
+
+  border-color:
+    var(--theme-border) !important;
+}
+
+
+/* Calendar header */
+
+[data-theme="dark"] .calendar-header {
+  background:
+    #151c22 !important;
+
+  border-color:
+    #2a3640 !important;
+
+  color:
+    #f3f6f8 !important;
+}
+
+
+/* Weekday row */
+
+[data-theme="dark"] .calendar-weekdays {
+  background:
+    #151c22 !important;
+
+  border-color:
+    #2a3640 !important;
+}
+
+[data-theme="dark"] .calendar-weekdays span {
+  color:
+    #81909a !important;
+}
+
+
+/* Calendar grid */
+
+[data-theme="dark"] .calendar-grid {
+  background:
+    #151c22 !important;
+
+  border-color:
+    #2a3640 !important;
+}
+
+
+/* Individual days */
+
+[data-theme="dark"] .calendar-day {
+  background:
+    #141c22 !important;
+
+  border-color:
+    #2b3842 !important;
+
+  color:
+    #d4dde2 !important;
+}
+
+[data-theme="dark"] .calendar-day:hover {
+  background:
+    #1c2a33 !important;
+
+  border-color:
+    #416473 !important;
+}
+
+
+/* Empty calendar cells */
+
+[data-theme="dark"] .calendar-empty {
+  background:
+    #10171d !important;
+
+  border-color:
+    #222d35 !important;
+}
+
+
+/* Day number */
+
+[data-theme="dark"] .calendar-day-number {
+  background:
+    #202b33 !important;
+
+  color:
+    #dce5e9 !important;
+
+  border-color:
+    #34434d !important;
+}
+
+
+/* Today */
+
+[data-theme="dark"] .calendar-day.today {
+  background:
+    #152b35 !important;
+
+  border-color:
+    #69bee1 !important;
+}
+
+
+/* Selected date */
+
+[data-theme="dark"] .calendar-day.selected {
+  background:
+    #193440 !important;
+
+  border-color:
+    #69bee1 !important;
+
+  color:
+    #ffffff !important;
+}
+
+
+/* Task information inside calendar */
+
+[data-theme="dark"] .calendar-task-info {
+  color:
+    #8da4b0 !important;
+}
+
+
+/* =========================================================
+   CALENDAR NAVIGATION BUTTONS
+   ========================================================= */
+
+[data-theme="dark"] .calendar-header button {
+  background:
+    #1a252d !important;
+
+  border-color:
+    #30404a !important;
+
+  color:
+    #d5dfe4 !important;
+}
+
+[data-theme="dark"] .calendar-header button:hover {
+  background:
+    #20313b !important;
+
+  border-color:
+    #69bee1 !important;
+
+  color:
+    #69bee1 !important;
+}
+
+
+/* =========================================================
+   PLANNER PROGRESS
+   ========================================================= */
+
+[data-theme="dark"] .planner-progress {
+  background:
+    #151c22 !important;
+
+  border-color:
+    #2a3640 !important;
+}
+
+[data-theme="dark"] .planner-progress-bar {
+  background:
+    #26333c !important;
+}
+
+[data-theme="dark"] .planner-progress-fill {
+  background:
+    linear-gradient(
+      90deg,
+      #69bee1,
+      #4ca9d1
+    ) !important;
+}
+
+[data-theme="dark"] .planner-progress-percentage {
+  background:
+    #18303b !important;
+
+  color:
+    #69bee1 !important;
+
+  border:
+    1px solid #345563 !important;
+}
+
+[data-theme="dark"] .planner-stat {
+  background:
+    #1a232b !important;
+
+  border-color:
+    #2a3640 !important;
+}
+
+
+/* =========================================================
+   PLANNER STATS
+   ========================================================= */
+
+[data-theme="dark"] .planner-stats {
+  background:
+    #151c22 !important;
+
+  border-color:
+    #2a3640 !important;
+}
+
+[data-theme="dark"] .planner-stat-card {
+  background:
+    #1a232b !important;
+
+  border-color:
+    #2d3b45 !important;
+}
+
+[data-theme="dark"] .planner-stat-card:hover {
+  background:
+    #1e2b34 !important;
+
+  border-color:
+    #406170 !important;
+}
+
+[data-theme="dark"] .planner-stat-progress-bar {
+  background:
+    #26333c !important;
+}
+
+[data-theme="dark"] .planner-stat-progress-fill {
+  background:
+    #69bee1 !important;
+}
+
+
+/* =========================================================
+   CALCULATOR - EMPTY RESULTS FIX
+   ========================================================= */
+
+[data-theme="dark"] .calculator-results-wrapper {
+  background:
+    transparent !important;
+}
+
+[data-theme="dark"] .calculator-empty-results {
+  background:
+    #151c22 !important;
+
+  border:
+    1px solid #2a3640 !important;
+
+  color:
+    #d7e0e5 !important;
+
+  box-shadow:
+    var(--theme-shadow) !important;
+}
+
+[data-theme="dark"] .calculator-empty-results h3 {
+  color:
+    #f3f6f8 !important;
+}
+
+[data-theme="dark"] .calculator-empty-results p {
+  color:
+    #9aa7b0 !important;
+}
+
+[data-theme="dark"] .calculator-empty-icon {
+  background:
+    #182f3a !important;
+
+  border-color:
+    #345563 !important;
+}
+
+
+/* =========================================================
+   CALCULATOR SECTIONS
+   ========================================================= */
+
+[data-theme="dark"] .calculator-card {
+  background:
+    #151c22 !important;
+
+  border-color:
+    #2a3640 !important;
+}
+
+
+/* Activity cards */
+
+[data-theme="dark"] .activity-option {
+  background:
+    #1a232b !important;
+
+  border-color:
+    #2c3942 !important;
+}
+
+[data-theme="dark"] .activity-option:hover {
+  background:
+    #1e2b34 !important;
+
+  border-color:
+    #416170 !important;
+}
+
+[data-theme="dark"] .activity-option.active {
+  background:
+    #173440 !important;
+
+  border-color:
+    #69bee1 !important;
+}
+
+[data-theme="dark"] .activity-name {
+  color:
+    #dbe4e8 !important;
+}
+
+[data-theme="dark"] .activity-description {
+  color:
+    #85939d !important;
+}
+
+
+/* Goal options */
+
+[data-theme="dark"] .goal-option {
+  background:
+    #1a232b !important;
+
+  border-color:
+    #2c3942 !important;
+}
+
+[data-theme="dark"] .goal-option:hover {
+  background:
+    #1e2b34 !important;
+
+  border-color:
+    #416170 !important;
+}
+
+[data-theme="dark"] .goal-option.active {
+  background:
+    #173440 !important;
+
+  border-color:
+    #69bee1 !important;
+}
+
+[data-theme="dark"] .goal-title {
+  color:
+    #dbe4e8 !important;
+}
+
+[data-theme="dark"] .goal-description {
+  color:
+    #85939d !important;
+}
+
+
+/* =========================================================
+   CALCULATOR GENDER
+   ========================================================= */
+
+[data-theme="dark"] .gender-option {
+  background:
+    #1a232b !important;
+
+  border-color:
+    #2c3942 !important;
+
+  color:
+    #dbe4e8 !important;
+}
+
+[data-theme="dark"] .gender-option:hover {
+  background:
+    #1e2b34 !important;
+}
+
+[data-theme="dark"] .gender-option.active {
+  background:
+    #173440 !important;
+
+  border-color:
+    #69bee1 !important;
+
+  color:
+    #69bee1 !important;
+}
+
+
+/* =========================================================
+   DIET - DATE / RESET AREA
+   ========================================================= */
+
+[data-theme="dark"] .meal-day-controls {
+  background:
+    #151c22 !important;
+
+  border-color:
+    #2a3640 !important;
+
+  color:
+    #dbe4e8 !important;
+}
+
+[data-theme="dark"] .meal-today strong {
+  color:
+    #dbe4e8 !important;
+}
+
+[data-theme="dark"] .meal-today span {
+  color:
+    #69bee1 !important;
+}
+
+[data-theme="dark"] .reset-diet-button {
+  background:
+    #1a232b !important;
+
+  border-color:
+    #34424c !important;
+
+  color:
+    #aebac2 !important;
+}
+
+[data-theme="dark"] .reset-diet-button:hover {
+  background:
+    #2b1a1c !important;
+
+  border-color:
+    #573034 !important;
+
+  color:
+    #ff858c !important;
+}
+
+
+/* =========================================================
+   DIET - DAILY TARGET
+   ========================================================= */
+
+[data-theme="dark"] .meal-target {
+  background:
+    #1a232b !important;
+
+  border:
+    1px solid #2f3d46 !important;
+
+  border-radius:
+    10px !important;
+
+  padding:
+    10px 13px !important;
+}
+
+[data-theme="dark"] .meal-target span {
+  color:
+    #8796a0 !important;
+}
+
+[data-theme="dark"] .meal-target strong {
+  color:
+    #f2f6f8 !important;
+}
+
+[data-theme="dark"] .meal-target small {
+  color:
+    #7f8d96 !important;
+}
+
+
+/* =========================================================
+   DIET - NUTRITION TRACKER
+   ========================================================= */
+
+[data-theme="dark"] .nutrition-tracker {
+  background:
+    linear-gradient(
+      135deg,
+      #15262e 0%,
+      #151c22 100%
+    ) !important;
+
+  border-color:
+    #304a55 !important;
+}
+
+[data-theme="dark"] .nutrition-progress-bar,
+[data-theme="dark"] .nutrition-bar {
+  background:
+    #26333c !important;
+}
+
+[data-theme="dark"] .nutrition-progress-fill,
+[data-theme="dark"] .nutrition-bar-fill {
+  background:
+    linear-gradient(
+      90deg,
+      #69bee1,
+      #52afd6
+    ) !important;
+}
+
+
+/* =========================================================
+   DIET - OVERVIEW
+   ========================================================= */
+
+[data-theme="dark"] .nutrition-overview {
+  background:
+    #151c22 !important;
+
+  border-color:
+    #2a3640 !important;
+}
+
+[data-theme="dark"] .nutrition-progress-info span,
+[data-theme="dark"] .nutrition-progress-info strong {
+  color:
+    #9aa7b0 !important;
+}
+
+[data-theme="dark"] .nutrition-progress-info > span {
+  color:
+    #69bee1 !important;
+}
+
+
+/* =========================================================
+   DIET - MEAL CARDS
+   ========================================================= */
+
+[data-theme="dark"] .meal-card {
+  background:
+    #151c22 !important;
+
+  border-color:
+    #2a3640 !important;
+}
+
+[data-theme="dark"] .meal-card:hover {
+  background:
+    #182229 !important;
+
+  border-color:
+    #385565 !important;
+}
+
+[data-theme="dark"] .meal-card-title h3 {
+  color:
+    #f3f6f8 !important;
+}
+
+[data-theme="dark"] .meal-type {
+  color:
+    #69bee1 !important;
+}
+
+[data-theme="dark"] .meal-nutrition > div {
+  background:
+    #1a232b !important;
+
+  border-color:
+    #2c3942 !important;
+}
+
+[data-theme="dark"] .meal-nutrition strong {
+  color:
+    #dce5e9 !important;
+}
+
+[data-theme="dark"] .meal-nutrition span {
+  color:
+    #7f8d96 !important;
+}
+
+[data-theme="dark"] .meal-ingredients {
+  background:
+    #1a232b !important;
+
+  border-left-color:
+    #69bee1 !important;
+}
+
+[data-theme="dark"] .meal-ingredients > span {
+  color:
+    #9aa7b0 !important;
+}
+
+[data-theme="dark"] .meal-ingredients p {
+  color:
+    #9aa7b0 !important;
+}
+
+[data-theme="dark"] .meal-details span {
+  background:
+    #1a232b !important;
+
+  border-color:
+    #2b3942 !important;
+
+  color:
+    #9aa7b0 !important;
+}
+
+[data-theme="dark"] .meal-match {
+  background:
+    #1a232b !important;
+
+  border-color:
+    #2c3942 !important;
+}
+
+[data-theme="dark"] .meal-match span {
+  color:
+    #7f8d96 !important;
+}
+
+[data-theme="dark"] .meal-match strong {
+  color:
+    #cdd8de !important;
+}
+
+
+/* =========================================================
+   DIET - MEAL BUTTONS
+   ========================================================= */
+
+[data-theme="dark"] .change-meal-button {
+  background:
+    #1a232b !important;
+
+  border-color:
+    #34434d !important;
+
+  color:
+    #b7c2c9 !important;
+}
+
+[data-theme="dark"] .change-meal-button:hover:not(:disabled) {
+  background:
+    #193440 !important;
+
+  border-color:
+    #69bee1 !important;
+
+  color:
+    #69bee1 !important;
+}
+
+[data-theme="dark"] .change-meal-button:disabled {
+  background:
+    #151c22 !important;
+
+  border-color:
+    #29343c !important;
+
+  color:
+    #65737c !important;
+}
+
+[data-theme="dark"] .meal-eaten-button {
+  background:
+    #13202b !important;
+
+  border-color:
+    #284450 !important;
+
+  color:
+    #69bee1 !important;
+}
+
+
+/* =========================================================
+   DIET GOAL CARD
+   ========================================================= */
+
+[data-theme="dark"] .diet-goal-card {
+  background:
+    linear-gradient(
+      135deg,
+      #17262e 0%,
+      #151c22 100%
+    ) !important;
+
+  border-color:
+    #304752 !important;
+}
+
+[data-theme="dark"] .diet-goal-content h2 {
+  color:
+    #f3f6f8 !important;
+}
+
+[data-theme="dark"] .diet-goal-content p {
+  color:
+    #9aa7b0 !important;
+}
+
+[data-theme="dark"] .diet-goal-calories strong {
+  color:
+    #69bee1 !important;
+}
+
+
+/* =========================================================
+   DIET TARGET CARD
+   ========================================================= */
+
+[data-theme="dark"] .diet-target-card {
+  background:
+    #151c22 !important;
+
+  border-color:
+    #2a3640 !important;
+}
+
+[data-theme="dark"] .diet-target-info h2 {
+  color:
+    #f3f6f8 !important;
+}
+
+[data-theme="dark"] .diet-target-info p {
+  color:
+    #8e9ca5 !important;
+}
+
+
+/* =========================================================
+   WORKOUT PROGRESS BARS
+   ========================================================= */
+
+[data-theme="dark"] .progress-container {
+  background:
+    #151c22 !important;
+
+  border-color:
+    #2a3640 !important;
+}
+
+[data-theme="dark"] .progress-bar {
+  background:
+    #26333c !important;
+}
+
+[data-theme="dark"] .progress-fill {
+  background:
+    linear-gradient(
+      90deg,
+      #69bee1,
+      #52afd6
+    ) !important;
+}
+
+
+/* =========================================================
+   GENERAL PROGRESS TRACKS
+   ========================================================= */
+
+[data-theme="dark"] .progress-track,
+[data-theme="dark"] .dashboard-progress-bar {
+  background:
+    #26333c !important;
+}
+
+
+/* =========================================================
+   DARK MODE CARD TEXT CONTRAST
+   ========================================================= */
+
+[data-theme="dark"] .page-title p,
+[data-theme="dark"] .page-header p,
+[data-theme="dark"] .section-description,
+[data-theme="dark"] .split-description,
+[data-theme="dark"] .workout-header p {
+  color:
+    #96a4ad !important;
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+   ========================================================= */
+
+[data-theme="dark"] .sidebar-toggle {
+  background:
+    #f4f7f8 !important;
+
+  color:
+    #1a252c !important;
+
+  border:
+    1px solid #dce4e8 !important;
+
+  box-shadow:
+    0 4px 12px rgba(
+      0,
+      0,
+      0,
+      0.25
+    ) !important;
+}
+
+
+/* =========================================================
+   DARK MODE OVERLAY
+   ========================================================= */
+
+[data-theme="dark"] .sidebar-overlay {
+  background:
+    rgba(
+      0,
+      0,
+      0,
+      0.68
+    ) !important;
+}
+
+
+/* =========================================================
+   UNIVERSAL DARK CARD EDGE
+   ========================================================= */
+
+[data-theme="dark"] .card,
+[data-theme="dark"] .panel,
+[data-theme="dark"] .section-card {
+  background:
+    var(--theme-surface) !important;
+
+  border-color:
+    var(--theme-border) !important;
+}
+
+
+/* =========================================================
+   FINAL SMOOTH TRANSITIONS
+   ========================================================= */
+
+[data-theme="dark"] .calendar-day,
+[data-theme="dark"] .meal-card,
+[data-theme="dark"] .diet-target-card,
+[data-theme="dark"] .diet-goal-card,
+[data-theme="dark"] .diet-preference-card,
+[data-theme="dark"] .exercise-card,
+[data-theme="dark"] .task-item,
+[data-theme="dark"] .planner-stat-card,
+[data-theme="dark"] .calculator-card,
+[data-theme="dark"] .calculator-empty-results,
+[data-theme="dark"] .change-meal-button,
+[data-theme="dark"] .reset-diet-button {
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+}
 
 

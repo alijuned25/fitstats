@@ -1,18 +1,36 @@
-import { Link, useLocation } from "react-router-dom";
+import {
+  Link,
+  useLocation,
+} from "react-router-dom";
+
 
 function Sidebar({
   isOpen,
   onToggle,
+  theme,
+  onThemeToggle,
 }) {
-  const location = useLocation();
+
+  const location =
+    useLocation();
+
 
   function isActive(path) {
-    return location.pathname === path;
+
+    return (
+      location.pathname === path
+    );
+
   }
 
+
   return (
+
     <>
-      {/* Mobile / Desktop Menu Button */}
+
+      {/* ======================================
+          MOBILE MENU BUTTON
+      ====================================== */}
 
       <button
         className="sidebar-toggle"
@@ -23,31 +41,43 @@ function Sidebar({
       </button>
 
 
-      {/* Overlay */}
+      {/* ======================================
+          OVERLAY
+      ====================================== */}
 
       {isOpen && (
+
         <div
           className="sidebar-overlay"
           onClick={onToggle}
         ></div>
+
       )}
 
 
-      {/* Sidebar */}
+      {/* ======================================
+          SIDEBAR
+      ====================================== */}
 
       <aside
         className={`sidebar ${
-          isOpen ? "sidebar-open" : ""
+          isOpen
+            ? "sidebar-open"
+            : ""
         }`}
       >
 
-        {/* Header */}
+
+        {/* ====================================
+            HEADER
+        ==================================== */}
 
         <div className="sidebar-header">
 
           <div className="sidebar-logo">
             FitStats
           </div>
+
 
           <button
             className="sidebar-close"
@@ -60,7 +90,9 @@ function Sidebar({
         </div>
 
 
-        {/* Navigation */}
+        {/* ====================================
+            NAVIGATION
+        ==================================== */}
 
         <nav className="sidebar-nav">
 
@@ -68,9 +100,13 @@ function Sidebar({
             MENU
           </p>
 
+
           <ul>
 
+            {/* Dashboard */}
+
             <li>
+
               <Link
                 to="/dashboard"
                 className={
@@ -80,6 +116,7 @@ function Sidebar({
                 }
                 onClick={onToggle}
               >
+
                 <span className="nav-icon">
                   🏠
                 </span>
@@ -87,11 +124,16 @@ function Sidebar({
                 <span>
                   Dashboard
                 </span>
+
               </Link>
+
             </li>
 
 
+            {/* Workout */}
+
             <li>
+
               <Link
                 to="/workout"
                 className={
@@ -101,6 +143,7 @@ function Sidebar({
                 }
                 onClick={onToggle}
               >
+
                 <span className="nav-icon">
                   🏋️
                 </span>
@@ -108,11 +151,16 @@ function Sidebar({
                 <span>
                   Workout
                 </span>
+
               </Link>
+
             </li>
 
 
+            {/* Planner */}
+
             <li>
+
               <Link
                 to="/planner"
                 className={
@@ -122,6 +170,7 @@ function Sidebar({
                 }
                 onClick={onToggle}
               >
+
                 <span className="nav-icon">
                   📅
                 </span>
@@ -129,11 +178,16 @@ function Sidebar({
                 <span>
                   Planner
                 </span>
+
               </Link>
+
             </li>
 
 
+            {/* Calculator */}
+
             <li>
+
               <Link
                 to="/calculator"
                 className={
@@ -143,6 +197,7 @@ function Sidebar({
                 }
                 onClick={onToggle}
               >
+
                 <span className="nav-icon">
                   🧮
                 </span>
@@ -150,11 +205,16 @@ function Sidebar({
                 <span>
                   Calculator
                 </span>
+
               </Link>
+
             </li>
 
 
+            {/* Diet */}
+
             <li>
+
               <Link
                 to="/diet"
                 className={
@@ -164,6 +224,7 @@ function Sidebar({
                 }
                 onClick={onToggle}
               >
+
                 <span className="nav-icon">
                   🥗
                 </span>
@@ -171,11 +232,16 @@ function Sidebar({
                 <span>
                   Diet
                 </span>
+
               </Link>
+
             </li>
 
 
+            {/* Sensei */}
+
             <li>
+
               <Link
                 to="/ai"
                 className={
@@ -185,23 +251,91 @@ function Sidebar({
                 }
                 onClick={onToggle}
               >
+
                 <span className="nav-icon">
-                  🤖
+                  ✦
                 </span>
 
                 <span>
-                  AI Coach
+                  Sensei
                 </span>
+
               </Link>
+
             </li>
 
           </ul>
 
         </nav>
 
+
+        {/* ====================================
+            THEME TOGGLE
+        ==================================== */}
+
+        <div className="sidebar-theme-section">
+
+          <div className="sidebar-theme-label">
+
+            <span>
+              APPEARANCE
+            </span>
+
+          </div>
+
+
+          <button
+            type="button"
+            className={`theme-toggle ${
+              theme === "dark"
+                ? "dark"
+                : "light"
+            }`}
+            onClick={
+              onThemeToggle
+            }
+            aria-label={
+              theme === "dark"
+                ? "Switch to light theme"
+                : "Switch to dark theme"
+            }
+          >
+
+            <span className="theme-toggle-icon">
+              {theme === "dark"
+                ? "🌙"
+                : "☀️"}
+            </span>
+
+
+            <span className="theme-toggle-text">
+
+              {theme === "dark"
+                ? "Dark Mode"
+                : "Light Mode"}
+
+            </span>
+
+
+            <span className="theme-toggle-track">
+
+              <span className="theme-toggle-thumb">
+              </span>
+
+            </span>
+
+          </button>
+
+        </div>
+
+
       </aside>
+
     </>
+
   );
+
 }
+
 
 export default Sidebar;
