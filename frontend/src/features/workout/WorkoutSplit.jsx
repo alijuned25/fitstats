@@ -86,6 +86,106 @@ function WorkoutSplit({
 
   /*
    * ==========================================
+   * SAVE COMPLETED EXERCISE TO MYSQL
+   * ==========================================
+   */
+
+  async function saveExerciseToDatabase(
+    day,
+    exercise
+  ) {
+
+    try {
+
+      /*
+       * Authentication is not implemented yet,
+       * so use development user ID 1.
+       */
+
+      const userId =
+        localStorage.getItem(
+          "fitstatsUserId"
+        ) || "1";
+
+
+      const response =
+        await fetch(
+          "http://localhost:5000/api/workout",
+          {
+            method: "POST",
+
+            headers: {
+              "Content-Type":
+                "application/json",
+            },
+
+            body: JSON.stringify({
+
+              user_id:
+                Number(userId),
+
+              workout_day:
+                day.day,
+
+              workout_name:
+                day.name,
+
+              exercise_name:
+                exercise.name,
+
+              sets:
+                Number(exercise.sets),
+
+              reps:
+                Number(exercise.reps),
+
+              completed:
+                true,
+
+            }),
+          }
+        );
+
+
+      const data =
+        await response.json();
+
+
+      if (!response.ok) {
+
+        throw new Error(
+          data?.message ||
+          "Unable to save workout progress."
+        );
+
+      }
+
+
+      console.log(
+        "Workout progress saved:",
+        data
+      );
+
+
+    } catch (error) {
+
+      /*
+       * Keep the workout page working
+       * even if the backend is unavailable.
+       */
+
+      console.error(
+        "Workout database save error:",
+        error
+      );
+
+    }
+
+  }
+
+
+  /*
+   * ==========================================
    * CURRENT SPLIT DATA
    * ==========================================
    */
@@ -139,7 +239,8 @@ function WorkoutSplit({
    */
 
   function handleComplete(
-    exerciseName
+    day,
+    exercise
   ) {
 
     setCompletedExercises(
@@ -157,7 +258,7 @@ function WorkoutSplit({
 
         if (
           currentExercises.includes(
-            exerciseName
+            exercise.name
           )
         ) {
 
@@ -168,7 +269,7 @@ function WorkoutSplit({
 
         const updatedExercises = [
           ...currentExercises,
-          exerciseName,
+          exercise.name,
         ];
 
 
@@ -208,6 +309,17 @@ function WorkoutSplit({
             selectedSplit,
 
         });
+
+
+        /*
+         * Save exercise completion
+         * to MySQL.
+         */
+
+        saveExerciseToDatabase(
+          day,
+          exercise
+        );
 
 
         return updatedState;
@@ -604,7 +716,8 @@ function WorkoutSplit({
                     onComplete={
                       () =>
                         handleComplete(
-                          exercise.name
+                          day,
+                          exercise
                         )
                     }
                   />

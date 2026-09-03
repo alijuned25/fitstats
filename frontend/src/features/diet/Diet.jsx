@@ -42,13 +42,6 @@ function Diet() {
    * ==========================================
    * CALORIE TARGET
    * ==========================================
-   *
-   * First use the saved Diet/Dashboard target.
-   *
-   * If it doesn't exist, use the Calculator
-   * goal calories.
-   *
-   * Final fallback: 2200 kcal.
    */
 
   const savedCalories =
@@ -113,11 +106,6 @@ function Diet() {
    * ==========================================
    * DIET PREFERENCE
    * ==========================================
-   *
-   * Load the user's saved diet preference.
-   *
-   * Default:
-   * vegetarian
    */
 
   const savedPreference =
@@ -154,6 +142,115 @@ function Diet() {
 
   /*
    * ==========================================
+   * SAVE DIET PREFERENCE TO MYSQL
+   * ==========================================
+   */
+
+  async function saveDietPreferenceToDatabase(
+    newPreference
+  ) {
+
+    try {
+
+      /*
+       * Authentication is not implemented yet,
+       * so we use development user ID 1.
+       */
+
+      const userId =
+        localStorage.getItem(
+          "fitstatsUserId"
+        ) || "1";
+
+
+      /*
+       * Convert frontend value into
+       * database-friendly value.
+       */
+
+      const dietType =
+        newPreference === "nonVegetarian"
+          ? "Non-Vegetarian"
+          : "Vegetarian";
+
+
+      /*
+       * Send preference to backend.
+       */
+
+      const response =
+        await fetch(
+          "http://localhost:5000/api/diet",
+          {
+            method: "POST",
+
+            headers: {
+              "Content-Type":
+                "application/json",
+            },
+
+            body: JSON.stringify({
+
+              user_id:
+                Number(userId),
+
+              diet_type:
+                dietType,
+
+              /*
+               * These fields are not currently
+               * collected on this page.
+               */
+
+              allergies:
+                "",
+
+              disliked_foods:
+                "",
+            }),
+          }
+        );
+
+
+      const data =
+        await response.json();
+
+
+      if (!response.ok) {
+
+        throw new Error(
+          data?.message ||
+          "Unable to save diet preference."
+        );
+
+      }
+
+
+      console.log(
+        "Diet preference saved:",
+        data
+      );
+
+
+    } catch (error) {
+
+      /*
+       * The Diet page should continue working
+       * even if the backend is unavailable.
+       */
+
+      console.error(
+        "Diet preference save error:",
+        error
+      );
+
+    }
+
+  }
+
+
+  /*
+   * ==========================================
    * CHANGE DIET PREFERENCE
    * ==========================================
    */
@@ -174,13 +271,30 @@ function Diet() {
     }
 
 
+    /*
+     * Update React state.
+     */
+
     setPreference(
       newPreference
     );
 
 
+    /*
+     * Keep localStorage working.
+     */
+
     localStorage.setItem(
       "fitstatsDietPreference",
+      newPreference
+    );
+
+
+    /*
+     * Save to MySQL.
+     */
+
+    saveDietPreferenceToDatabase(
       newPreference
     );
 
@@ -217,8 +331,8 @@ function Diet() {
 
 
     /*
-     * Keep the value inside the
-     * allowed Diet range.
+     * Keep the value inside
+     * the allowed Diet range.
      */
 
     const safeValue =

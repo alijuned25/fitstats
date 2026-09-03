@@ -6,6 +6,9 @@ dotenv.config();
 
 const aiRoutes = require("./routes/ai");
 const profileRoutes = require("./routes/profile");
+const dietRoutes = require("./routes/diet");
+const workoutRoutes = require("./routes/workout");
+const plannerRoutes = require("./routes/planner");
 const db = require("./config/db");
 
 const app = express();
@@ -44,7 +47,6 @@ app.get("/api/health", (req, res) => {
 
 app.get("/api/db/health", async (req, res) => {
   try {
-
     const connection = await db.getConnection();
 
     await connection.query("SELECT 1");
@@ -57,30 +59,29 @@ app.get("/api/db/health", async (req, res) => {
     });
 
   } catch (error) {
-
     console.error("MySQL connection error:", error);
 
     res.status(500).json({
       success: false,
       message: "Unable to connect to MySQL.",
     });
-
   }
 });
 
 
 /* ==========================================
-   AI ROUTES
+   API ROUTES
    ========================================== */
 
 app.use("/api/ai", aiRoutes);
 
-
-/* ==========================================
-   PROFILE ROUTES
-   ========================================== */
-
 app.use("/api/profile", profileRoutes);
+
+app.use("/api/diet", dietRoutes);
+
+app.use("/api/workout", workoutRoutes);
+
+app.use("/api/planner", plannerRoutes);
 
 
 /* ==========================================

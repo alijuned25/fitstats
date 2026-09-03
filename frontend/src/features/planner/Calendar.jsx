@@ -1,18 +1,15 @@
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
 
 import CalendarDay from "./CalendarDay";
 import TaskList from "./TaskList";
 import PlannerProgress from "./PlannerProgress";
 import PlannerStats from "./PlannerStats";
 
-
 import {
   getDaysInMonth,
   getFirstDayOfMonth,
   getMonthName,
 } from "./plannerUtils";
-
 
 import {
   getPlannerTasks,
@@ -22,8 +19,7 @@ import {
 
 function Calendar() {
 
-  const today =
-    new Date();
+  const today = new Date();
 
 
   /*
@@ -118,9 +114,7 @@ function Calendar() {
    * ==========================================
    */
 
-  function getDateKey(
-    day
-  ) {
+  function getDateKey(day) {
 
     return `${year}-${month + 1}-${day}`;
 
@@ -161,8 +155,7 @@ function Calendar() {
    * ==========================================
    */
 
-  const currentMonthTasks =
-    [];
+  const currentMonthTasks = [];
 
 
   for (
@@ -186,6 +179,229 @@ function Calendar() {
     currentMonthTasks.push(
       ...dayTasks
     );
+
+  }
+
+
+  /*
+   * ==========================================
+   * USER ID
+   * ==========================================
+   */
+
+  function getUserId() {
+
+    return Number(
+      localStorage.getItem(
+        "fitstatsUserId"
+      ) || "1"
+    );
+
+  }
+
+
+  /*
+   * ==========================================
+   * SAVE TASK TO DATABASE
+   * ==========================================
+   */
+
+  async function saveTaskToDatabase(
+    task,
+    dateKey
+  ) {
+
+    try {
+
+      const response =
+        await fetch(
+          "http://localhost:5000/api/planner",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type":
+                "application/json",
+            },
+            body: JSON.stringify({
+              user_id:
+                getUserId(),
+
+              task_name:
+                task.title,
+
+              category:
+                task.category,
+
+              task_date:
+                dateKey,
+
+              completed:
+                task.completed,
+            }),
+          }
+        );
+
+
+      const data =
+        await response.json();
+
+
+      if (!response.ok) {
+
+        throw new Error(
+          data?.message ||
+          "Unable to save planner task."
+        );
+
+      }
+
+
+      console.log(
+        "Planner task saved:",
+        data
+      );
+
+
+      return data.taskId;
+
+    } catch (error) {
+
+      console.error(
+        "Planner database save error:",
+        error
+      );
+
+      return null;
+
+    }
+
+  }
+
+
+  /*
+   * ==========================================
+   * UPDATE TASK IN DATABASE
+   * ==========================================
+   */
+
+  async function updateTaskInDatabase(
+    task
+  ) {
+
+    if (!task.dbId) {
+      return;
+    }
+
+
+    try {
+
+      const response =
+        await fetch(
+          `http://localhost:5000/api/planner/${task.dbId}`,
+          {
+            method: "PUT",
+            headers: {
+              "Content-Type":
+                "application/json",
+            },
+            body: JSON.stringify({
+              task_name:
+                task.title,
+
+              category:
+                task.category,
+
+              completed:
+                task.completed,
+            }),
+          }
+        );
+
+
+      const data =
+        await response.json();
+
+
+      if (!response.ok) {
+
+        throw new Error(
+          data?.message ||
+          "Unable to update planner task."
+        );
+
+      }
+
+
+      console.log(
+        "Planner task updated:",
+        data
+      );
+
+    } catch (error) {
+
+      console.error(
+        "Planner database update error:",
+        error
+      );
+
+    }
+
+  }
+
+
+  /*
+   * ==========================================
+   * DELETE TASK FROM DATABASE
+   * ==========================================
+   */
+
+  async function deleteTaskFromDatabase(
+    task
+  ) {
+
+    if (!task.dbId) {
+      return;
+    }
+
+
+    try {
+
+      const response =
+        await fetch(
+          `http://localhost:5000/api/planner/${task.dbId}`,
+          {
+            method: "DELETE",
+          }
+        );
+
+
+      const data =
+        await response.json();
+
+
+      if (!response.ok) {
+
+        throw new Error(
+          data?.message ||
+          "Unable to delete planner task."
+        );
+
+      }
+
+
+      console.log(
+        "Planner task deleted:",
+        data
+      );
+
+    } catch (error) {
+
+      console.error(
+        "Planner database delete error:",
+        error
+      );
+
+    }
 
   }
 
@@ -264,9 +480,7 @@ function Calendar() {
    * ==========================================
    */
 
-  function isToday(
-    day
-  ) {
+  function isToday(day) {
 
     return (
       day ===
@@ -288,9 +502,7 @@ function Calendar() {
    * ==========================================
    */
 
-  function handleSelectDay(
-    day
-  ) {
+  function handleSelectDay(day) {
 
     setSelectedDay(
       day
@@ -315,7 +527,7 @@ function Calendar() {
    * ==========================================
    */
 
-  function handleAddTask() {
+  async function handleAddTask() {
 
     const trimmedTask =
       newTask.trim();
@@ -324,14 +536,18 @@ function Calendar() {
     if (
       trimmedTask === ""
     ) {
+
       return;
+
     }
 
 
     if (
       !selectedDateKey
     ) {
+
       return;
+
     }
 
 
@@ -351,6 +567,10 @@ function Calendar() {
 
     };
 
+
+    /*
+     * Save locally first.
+     */
 
     setTasks(
       (previous) => {
@@ -383,6 +603,64 @@ function Calendar() {
     );
 
 
+    /*
+     * Save to MySQL.
+     */
+
+    const databaseId =
+      await saveTaskToDatabase(
+        task,
+        selectedDateKey
+      );
+
+
+    /*
+     * Store the MySQL ID
+     * inside the local task.
+     */
+
+    if (databaseId) {
+
+      setTasks(
+        (previous) => {
+
+          const updatedTasks = {
+
+            ...previous,
+
+            [selectedDateKey]:
+              (
+                previous[
+                  selectedDateKey
+                ] || []
+              ).map(
+                (existingTask) =>
+                  existingTask.id ===
+                  task.id
+                    ? {
+                        ...existingTask,
+                        dbId:
+                          databaseId,
+                      }
+                    : existingTask
+              ),
+
+          };
+
+
+          savePlannerTasks(
+            updatedTasks
+          );
+
+
+          return updatedTasks;
+
+        }
+      );
+
+    }
+
+
     setNewTask(
       ""
     );
@@ -401,9 +679,31 @@ function Calendar() {
    * ==========================================
    */
 
-  function handleToggleTask(
+  async function handleToggleTask(
     taskId
   ) {
+
+    const taskToUpdate =
+      selectedTasks.find(
+        (task) =>
+          task.id === taskId
+      );
+
+
+    if (!taskToUpdate) {
+      return;
+    }
+
+
+    const updatedTask = {
+
+      ...taskToUpdate,
+
+      completed:
+        !taskToUpdate.completed,
+
+    };
+
 
     setTasks(
       (previous) => {
@@ -420,17 +720,9 @@ function Calendar() {
               ] || []
             ).map(
               (task) =>
-
                 task.id === taskId
 
-                  ? {
-
-                      ...task,
-
-                      completed:
-                        !task.completed,
-
-                    }
+                  ? updatedTask
 
                   : task
             ),
@@ -448,6 +740,11 @@ function Calendar() {
       }
     );
 
+
+    await updateTaskInDatabase(
+      updatedTask
+    );
+
   }
 
 
@@ -457,9 +754,21 @@ function Calendar() {
    * ==========================================
    */
 
-  function handleDeleteTask(
+  async function handleDeleteTask(
     taskId
   ) {
+
+    const taskToDelete =
+      selectedTasks.find(
+        (task) =>
+          task.id === taskId
+      );
+
+
+    if (!taskToDelete) {
+      return;
+    }
+
 
     setTasks(
       (previous) => {
@@ -492,6 +801,11 @@ function Calendar() {
       }
     );
 
+
+    await deleteTaskFromDatabase(
+      taskToDelete
+    );
+
   }
 
 
@@ -501,11 +815,16 @@ function Calendar() {
    * ==========================================
    */
 
-  function handleEditTask(
+  async function handleEditTask(
     taskId,
     newTitle,
     newCategory
   ) {
+
+    const updatedTaskContainer = {
+      task: null,
+    };
+
 
     setTasks(
       (previous) => {
@@ -521,23 +840,37 @@ function Calendar() {
                 selectedDateKey
               ] || []
             ).map(
-              (task) =>
+              (task) => {
 
-                task.id === taskId
+                if (
+                  task.id !== taskId
+                ) {
 
-                  ? {
+                  return task;
 
-                      ...task,
+                }
 
-                      title:
-                        newTitle,
 
-                      category:
-                        newCategory,
+                const updatedTask = {
 
-                    }
+                  ...task,
 
-                  : task
+                  title:
+                    newTitle,
+
+                  category:
+                    newCategory,
+
+                };
+
+
+                updatedTaskContainer.task =
+                  updatedTask;
+
+
+                return updatedTask;
+
+              }
             ),
 
         };
@@ -552,6 +885,17 @@ function Calendar() {
 
       }
     );
+
+
+    if (
+      updatedTaskContainer.task
+    ) {
+
+      await updateTaskInDatabase(
+        updatedTaskContainer.task
+      );
+
+    }
 
   }
 

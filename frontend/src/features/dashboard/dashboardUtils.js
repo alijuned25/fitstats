@@ -6,14 +6,22 @@ import {
 
 import workoutPlans from "../workout/workoutData";
 
-import {
-  getSelectedSplit,
-  getSplitWorkoutProgress,
-} from "../workout/workoutUtils";
 
-import {
-  getTodayPlannerProgress,
-} from "../planner/plannerStorage";
+/*
+ * =========================================================
+ * GET USER ID
+ * =========================================================
+ */
+
+function getUserId() {
+
+  return Number(
+    localStorage.getItem(
+      "fitstatsUserId"
+    ) || "1"
+  );
+
+}
 
 
 /*
@@ -139,7 +147,33 @@ function getDietType() {
 
 function getTodayDateString() {
 
-  return new Date().toDateString();
+  const today =
+    new Date();
+
+
+  const year =
+    today.getFullYear();
+
+
+  const month =
+    String(
+      today.getMonth() + 1
+    ).padStart(
+      2,
+      "0"
+    );
+
+
+  const day =
+    String(
+      today.getDate()
+    ).padStart(
+      2,
+      "0"
+    );
+
+
+  return `${year}-${month}-${day}`;
 
 }
 
@@ -209,7 +243,7 @@ function getCompletedMeals(
 ) {
 
   const today =
-    getTodayDateString();
+    new Date().toDateString();
 
 
   const storageKey =
@@ -374,25 +408,19 @@ export function getDashboardNutrition() {
 
 /*
  * =========================================================
- * GET TODAY'S WORKOUT PROGRESS
+ * GET DATABASE WORKOUT PROGRESS
  * =========================================================
  */
 
-export function getDashboardWorkout() {
-
-  /*
-   * Get the currently selected
-   * workout split.
-   */
+export async function getDashboardWorkout() {
 
   const selectedSplit =
-    getSelectedSplit();
+    Number(
+      localStorage.getItem(
+        "fitstatsSelectedSplit"
+      ) || "3"
+    );
 
-
-  /*
-   * Get the workout plan for
-   * that split.
-   */
 
   const workoutPlan =
     workoutPlans[
@@ -400,78 +428,380 @@ export function getDashboardWorkout() {
     ] || [];
 
 
-  /*
-   * Get the saved workout
-   * completion data.
-   */
-
-  const progress =
-    getSplitWorkoutProgress(
-      selectedSplit,
-      workoutPlan
+  const totalExercises =
+    workoutPlan.reduce(
+      (total, day) =>
+        total +
+        day.exercises.length,
+      0
     );
 
 
-  /*
-   * Return a clean object
-   * for the Dashboard.
-   */
+  const totalDays =
+    workoutPlan.length;
 
-  return {
 
-    selectedSplit,
+  try {
 
-    completedExercises:
-      progress.completedExerciseCount,
+    const response =
+      await fetch(
+        `http://localhost:5000/api/workout/${getUserId()}`
+      );
 
-    totalExercises:
-      progress.totalExercises,
 
-    exercisePercentage:
-      progress.exercisePercentage,
+    if (!response.ok) {
 
-    completedDays:
-      progress.completedDayCount,
+      throw new Error(
+        "Unable to fetch workout progress."
+      );
 
-    totalDays:
-      progress.totalDays,
+    }
 
-    dayPercentage:
-      progress.dayPercentage,
 
-  };
+    const data =
+      await response.json();
+
+
+    const progressRows =
+      data.progress || [];
+
+
+    const completedExerciseNames =
+      new Set(
+        progressRows
+          .filter(
+            (row) =>
+              Boolean(
+                row.completed
+              )
+          )
+          .map(
+            (row) =>
+              `${row.workout_day}-${row.exercise_name}`
+          )
+      );
+
+
+    const completedExercises =
+      completedExerciseNames.size;
+
+
+    const exercisePercentage =
+      totalExercises === 0
+        ? 0
+        : Math.min(
+            100,
+            Math.round(
+              (
+                completedExercises /
+                totalExercises
+              ) * 100
+            )
+          );
+
+
+    const completedDayNumbers =
+      new Set();
+
+
+    for (
+      let day = 1;
+      day <= totalDays;
+      day++
+    ) {
+
+      const dayPlan =
+        workoutPlan.find(
+          (item) =>
+            Number(item.day) ===
+            day
+        );
+
+
+      if (!dayPlan) {
+        continue;
+      }
+
+
+      const dayExercises =
+        dayPlan.exercises.map(
+          (exercise) =>
+            `${day}-${exercise.name}`
+        );
+
+
+      const allCompleted =
+        dayExercises.length > 0 &&
+        dayExercises.every(
+          (exerciseKey) =>
+            completedExerciseNames.has(
+              exerciseKey
+            )
+        );
+
+
+      if (allCompleted) {
+
+        completedDayNumbers.add(
+          day
+        );
+
+      }
+
+    }
+
+
+    const completedDays =
+      completedDayNumbers.size;
+
+
+    const dayPercentage =
+      totalDays === 0
+        ? 0
+        : Math.min(
+            100,
+            Math.round(
+              (
+                completedDays /
+                totalDays
+              ) * 100
+            )
+          );
+
+
+    return {
+
+      selectedSplit,
+
+      completedExercises,
+
+      totalExercises,
+
+      exercisePercentage,
+
+      completedDays,
+
+      totalDays,
+
+      dayPercentage,
+
+    };
+
+  } catch (error) {
+
+    console.error(
+      "Dashboard workout error:",
+      error
+    );
+
+
+    return {
+
+      selectedSplit,
+
+      completedExercises: 0,
+
+      totalExercises,
+
+      exercisePercentage: 0,
+
+      completedDays: 0,
+
+      totalDays,
+
+      dayPercentage: 0,
+
+    };
+
+  }
 
 }
 
 
 /*
  * =========================================================
- * GET TODAY'S PLANNER PROGRESS
+ * CONVERT DATABASE DATE TO LOCAL DATE
  * =========================================================
  */
 
-export function getDashboardPlanner() {
+function normalizePlannerDate(
+  taskDate
+) {
 
-  const progress =
-    getTodayPlannerProgress();
+  if (!taskDate) {
+    return "";
+  }
 
 
   /*
-   * Return a clean object
-   * for the Dashboard.
+   * MySQL DATE values can arrive from
+   * mysql2 as JavaScript Date objects
+   * or ISO strings.
+   *
+   * We convert them to the user's
+   * local date instead of simply taking
+   * the first 10 characters.
+   *
+   * Example:
+   *
+   * 2026-09-03T18:30:00.000Z
+   *
+   * becomes:
+   *
+   * 2026-09-04
+   *
+   * for India (IST).
    */
 
-  return {
+  const date =
+    new Date(taskDate);
 
-    completedTasks:
-      progress.completedTasks,
 
-    totalTasks:
-      progress.totalTasks,
+  if (
+    Number.isNaN(
+      date.getTime()
+    )
+  ) {
 
-    percentage:
-      progress.percentage,
+    return "";
 
-  };
+  }
+
+
+  const year =
+    date.getFullYear();
+
+
+  const month =
+    String(
+      date.getMonth() + 1
+    ).padStart(
+      2,
+      "0"
+    );
+
+
+  const day =
+    String(
+      date.getDate()
+    ).padStart(
+      2,
+      "0"
+    );
+
+
+  return `${year}-${month}-${day}`;
+
+}
+
+
+/*
+ * =========================================================
+ * GET DATABASE PLANNER PROGRESS
+ * =========================================================
+ */
+
+export async function getDashboardPlanner() {
+
+  const today =
+    getTodayDateString();
+
+
+  try {
+
+    const response =
+      await fetch(
+        `http://localhost:5000/api/planner/${getUserId()}`
+      );
+
+
+    if (!response.ok) {
+
+      throw new Error(
+        "Unable to fetch planner tasks."
+      );
+
+    }
+
+
+    const data =
+      await response.json();
+
+
+    const allTasks =
+      data.tasks || [];
+
+
+    /*
+     * Compare the normalized local
+     * database date with today's
+     * local date.
+     */
+
+    const todayTasks =
+      allTasks.filter(
+        (task) =>
+          normalizePlannerDate(
+            task.task_date
+          ) === today
+      );
+
+
+    const totalTasks =
+      todayTasks.length;
+
+
+    const completedTasks =
+      todayTasks.filter(
+        (task) =>
+          Boolean(
+            task.completed
+          )
+      ).length;
+
+
+    const percentage =
+      totalTasks === 0
+        ? 0
+        : Math.min(
+            100,
+            Math.round(
+              (
+                completedTasks /
+                totalTasks
+              ) * 100
+            )
+          );
+
+
+    return {
+
+      completedTasks,
+
+      totalTasks,
+
+      percentage,
+
+    };
+
+  } catch (error) {
+
+    console.error(
+      "Dashboard planner error:",
+      error
+    );
+
+
+    return {
+
+      completedTasks: 0,
+
+      totalTasks: 0,
+
+      percentage: 0,
+
+    };
+
+  }
 
 }

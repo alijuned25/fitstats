@@ -18353,3 +18353,584 @@ body {
 }
 
 
+/* =========================================================
+   SIDEBAR SECTION SPACING FIX
+========================================================= */
+
+/* Main sidebar navigation */
+.sidebar-nav {
+    padding-top: 28px;
+    padding-bottom: 30px;
+}
+
+/* Section headings:
+   MENU
+   APPEARANCE
+   WORKOUT
+   APPLICATIONS
+*/
+.sidebar-section-title {
+    position: relative;
+    display: block;
+
+    margin: 24px 10px 14px;
+
+    line-height: 1.4;
+    z-index: 5;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+/* First section heading (MENU) */
+.sidebar-section-title:first-child {
+    margin-top: 0;
+}
+
+/* Every menu/list container should have its own space */
+.sidebar-nav ul {
+    position: relative;
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+/* Space AFTER a menu list before the next section title */
+.sidebar-nav ul + .sidebar-section-title {
+    margin-top: 30px;
+}
+
+/* Menu items */
+.sidebar-nav li {
+    position: relative;
+    margin: 0 0 8px;
+}
+
+/* Make sure menu items don't cover section headings */
+.sidebar-nav .menu-item {
+    position: relative;
+    z-index: 1;
+}
+
+/* Dark Mode / normal menu item */
+.sidebar-nav .menu-item {
+    min-height: 48px;
+    box-sizing: border-box;
+}
+
+/* Extra separation specifically between Dark Mode and Workout */
+.sidebar-nav .menu-item + .sidebar-section-title {
+    margin-top: 30px;
+}
+
+/* Keep section headings above everything */
+.sidebar-nav .sidebar-section-title {
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* =========================================================
+   FINAL SIDEBAR LAYOUT
+   Dark Mode stays at the bottom
+========================================================= */
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Main sidebar navigation */
+.sidebar-nav {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 25px 15px 20px;
+
+    box-sizing: border-box;
+}
+
+
+/* Keep navigation sections in normal flow */
+.sidebar-nav > .sidebar-section-title {
+    flex-shrink: 0;
+}
+
+.sidebar-nav > ul {
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   DARK MODE SECTION
+========================================================= */
+
+.sidebar-theme-section {
+    margin-top: auto !important;
+
+    flex-shrink: 0;
+
+    padding-top: 16px;
+    padding-bottom: 5px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+
+/* Dark mode label */
+.sidebar-theme-label {
+    margin: 0 0 8px 2px;
+
+    color: #8c9aa3;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+
+/* Dark mode button */
+.theme-toggle {
+    width: 100%;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .sidebar-nav {
+        padding: 22px 12px 18px;
+    }
+
+    .sidebar-theme-section {
+        margin-top: auto !important;
+        padding-top: 14px;
+    }
+}
+
+/* =========================================================
+   FINAL SIDEBAR HEADER FIX
+   Prevent hamburger button from overlapping fitstats logo
+========================================================= */
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    position: relative;
+
+    height: 72px;
+    padding: 0 20px;
+
+    box-sizing: border-box;
+}
+
+
+/* Hamburger / menu button */
+.sidebar-header .menu-toggle,
+.sidebar-header .sidebar-toggle,
+.sidebar-header button:first-child {
+    flex-shrink: 0;
+
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 14px;
+
+    box-sizing: border-box;
+}
+
+
+/* FitStats logo/name */
+.sidebar-header .logo,
+.sidebar-header .brand,
+.sidebar-header .logo-text {
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+
+    white-space: nowrap;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Close button */
+.sidebar-header .close-button,
+.sidebar-header button:last-child {
+    margin-left: auto;
+
+    flex-shrink: 0;
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+}
+
+
+/* Make sure header elements never overlap */
+.sidebar-header > * {
+    position: relative;
+}
+
+.sidebar-header > *:not(:last-child) {
+    flex-shrink: 0;
+}
+
+
+/* Mobile */
+@media (max-width: 700px) {
+
+    .sidebar-header {
+        height: 72px;
+        padding: 0 16px;
+    }
+
+    .sidebar-header .menu-toggle,
+    .sidebar-header .sidebar-toggle,
+    .sidebar-header button:first-child {
+        width: 50px;
+        height: 50px;
+        margin-right: 12px;
+    }
+
+    .sidebar-header .close-button,
+    .sidebar-header button:last-child {
+        width: 38px;
+        height: 38px;
+    }
+}
+/* =========================================================
+   FITSTATS SIDEBAR - FINAL FIX
+   Header + Light/Dark Theme
+========================================================= */
+
+
+/* =========================================================
+   SIDEBAR HEADER
+========================================================= */
+
+.sidebar-header {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    height: 72px;
+
+    padding: 0 20px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   FITSTATS LOGO
+========================================================= */
+
+.sidebar-logo {
+    position: relative;
+    z-index: 5;
+
+    margin-left: 58px;
+
+    white-space: nowrap;
+
+    color: #17212b;
+    font-size: 24px;
+    font-weight: 750;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.sidebar-close {
+    position: absolute;
+
+    top: 50%;
+    right: 20px;
+
+    transform: translateY(-50%);
+
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+
+    border: none;
+    background: transparent;
+
+    color: #66737d;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   HAMBURGER BUTTON
+========================================================= */
+
+.sidebar-toggle {
+    position: fixed;
+
+    top: 18px;
+    left: 18px;
+
+    z-index: 2000;
+
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    border: 1px solid #e3e9ed;
+
+    color: #17212b;
+
+    box-shadow: 0 5px 18px rgba(23, 33, 43, 0.12);
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   LIGHT MODE SIDEBAR
+========================================================= */
+
+.sidebar {
+    background: #ffffff !important;
+
+    color: #17212b;
+
+    border-right: 1px solid #e3e9ed;
+}
+
+
+/* Sidebar header */
+.sidebar-header {
+    background: #ffffff !important;
+
+    border-bottom: 1px solid #e3e9ed !important;
+}
+
+
+/* Logo */
+.sidebar-logo {
+    color: #17212b !important;
+}
+
+
+/* Sidebar section headings */
+.sidebar-section-title {
+    color: #66737d !important;
+}
+
+
+/* Sidebar links */
+.sidebar-nav a {
+    color: #66737d !important;
+}
+
+
+.sidebar-nav a:hover {
+    background: #f4f7f9 !important;
+
+    color: #17212b !important;
+}
+
+
+.sidebar-nav a.active {
+    background: #eef9fd !important;
+
+    color: #17212b !important;
+
+    border-color: #bfe5f2 !important;
+}
+
+
+/* =========================================================
+   LIGHT MODE THEME SECTION
+========================================================= */
+
+.sidebar-theme-section {
+    background: #f4f7f9 !important;
+
+    border-top: 1px solid #e3e9ed !important;
+
+    padding: 16px 12px 12px !important;
+}
+
+
+/* Appearance label */
+.sidebar-theme-label {
+    color: #66737d !important;
+}
+
+
+/* Light mode toggle */
+.theme-toggle {
+    background: #ffffff !important;
+
+    border: 1px solid #dce5ea !important;
+
+    color: #17212b !important;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+[data-theme="dark"] .sidebar {
+    background: linear-gradient(
+        180deg,
+        #10171d 0%,
+        #0d1318 100%
+    ) !important;
+
+    color: #f3f6f8;
+}
+
+
+[data-theme="dark"] .sidebar-header {
+    background: #111b23 !important;
+
+    border-bottom-color: rgba(255,255,255,0.08) !important;
+}
+
+
+[data-theme="dark"] .sidebar-logo {
+    color: #f3f6f8 !important;
+}
+
+
+[data-theme="dark"] .sidebar-section-title {
+    color: #71818c !important;
+}
+
+
+[data-theme="dark"] .sidebar-nav a {
+    color: #aebbc3 !important;
+}
+
+
+[data-theme="dark"] .sidebar-nav a:hover {
+    background: #19242c !important;
+
+    color: #ffffff !important;
+}
+
+
+[data-theme="dark"] .sidebar-nav a.active {
+    background: #192a34 !important;
+
+    color: #ffffff !important;
+
+    border-color: #294451 !important;
+}
+
+
+/* =========================================================
+   DARK MODE THEME SECTION
+========================================================= */
+
+[data-theme="dark"] .sidebar-theme-section {
+    background: #111b23 !important;
+
+    border-top-color: #2a3640 !important;
+}
+
+
+[data-theme="dark"] .sidebar-theme-label {
+    color: #8c9aa3 !important;
+}
+
+
+/* =========================================================
+   DARK MODE CLOSE BUTTON
+========================================================= */
+
+[data-theme="dark"] .sidebar-close {
+    color: #aebbc3 !important;
+}
+
+
+[data-theme="dark"] .sidebar-close:hover {
+    background: rgba(255,255,255,0.06) !important;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .sidebar {
+        width: min(290px, 82vw);
+    }
+
+    .sidebar-header {
+        height: 72px;
+        padding: 0 16px;
+    }
+
+    .sidebar-logo {
+        margin-left: 58px;
+        font-size: 22px;
+    }
+
+    .sidebar-toggle {
+        top: 14px;
+        left: 14px;
+
+        width: 48px;
+        height: 48px;
+    }
+
+    .sidebar-close {
+        right: 14px;
+    }
+
+    .sidebar-theme-section {
+        padding: 14px 10px 10px !important;
+    }
+}
+

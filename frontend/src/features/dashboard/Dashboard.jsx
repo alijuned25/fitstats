@@ -23,7 +23,16 @@ import {
  * =========================================================
  */
 
-function getDashboardData() {
+async function getDashboardData() {
+
+  const [
+    workout,
+    planner,
+  ] = await Promise.all([
+    getDashboardWorkout(),
+    getDashboardPlanner(),
+  ]);
+
 
   return {
 
@@ -36,16 +45,72 @@ function getDashboardData() {
     nutrition:
       getDashboardNutrition(),
 
-    workout:
-      getDashboardWorkout(),
+    workout,
 
-    planner:
-      getDashboardPlanner(),
+    planner,
 
   };
 
 }
 
+
+/*
+ * =========================================================
+ * DEFAULT DASHBOARD DATA
+ * =========================================================
+ */
+
+function getDefaultDashboardData() {
+
+  return {
+
+    calculatorResults:
+      getCalculatorData(),
+
+    targetCalories:
+      getCalorieTarget(),
+
+    nutrition:
+      getDashboardNutrition(),
+
+    workout: {
+
+      selectedSplit: 3,
+
+      completedExercises: 0,
+
+      totalExercises: 0,
+
+      exercisePercentage: 0,
+
+      completedDays: 0,
+
+      totalDays: 0,
+
+      dayPercentage: 0,
+
+    },
+
+    planner: {
+
+      completedTasks: 0,
+
+      totalTasks: 0,
+
+      percentage: 0,
+
+    },
+
+  };
+
+}
+
+
+/*
+ * =========================================================
+ * DASHBOARD
+ * =========================================================
+ */
 
 function Dashboard() {
 
@@ -69,21 +134,49 @@ function Dashboard() {
     dashboardData,
     setDashboardData,
   ] = useState(
-    getDashboardData()
+    getDefaultDashboardData()
   );
+
+
+  const [
+    loading,
+    setLoading,
+  ] = useState(true);
 
 
   /*
    * =========================================================
-   * REFRESH DASHBOARD
+   * LOAD DASHBOARD
    * =========================================================
    */
 
-  function refreshDashboard() {
+  async function refreshDashboard() {
 
-    setDashboardData(
-      getDashboardData()
-    );
+    try {
+
+      setLoading(true);
+
+
+      const data =
+        await getDashboardData();
+
+
+      setDashboardData(
+        data
+      );
+
+    } catch (error) {
+
+      console.error(
+        "Dashboard loading error:",
+        error
+      );
+
+    } finally {
+
+      setLoading(false);
+
+    }
 
   }
 
@@ -207,23 +300,18 @@ function Dashboard() {
    * =========================================================
    * OVERALL DAILY PROGRESS
    * =========================================================
-   *
-   * We combine three areas:
-   *
-   * Nutrition
-   * Workout
-   * Planner
-   *
-   * Each contributes equally.
    */
 
   const overallProgress =
-    Math.round(
-      (
-        caloriePercentage +
-        workoutPercentage +
-        plannerPercentage
-      ) / 3
+    Math.min(
+      100,
+      Math.round(
+        (
+          caloriePercentage +
+          workoutPercentage +
+          plannerPercentage
+        ) / 3
+      )
     );
 
 
@@ -240,9 +328,13 @@ function Dashboard() {
     ) {
 
       return {
-        title: "Day Completed!",
+
+        title:
+          "Day Completed!",
+
         description:
           "Excellent work. You've completed your main goals for today.",
+
       };
 
     }
@@ -253,9 +345,13 @@ function Dashboard() {
     ) {
 
       return {
-        title: "Almost There!",
+
+        title:
+          "Almost There!",
+
         description:
           "You're having a strong day. Finish the remaining goals.",
+
       };
 
     }
@@ -266,9 +362,13 @@ function Dashboard() {
     ) {
 
       return {
-        title: "Great Progress!",
+
+        title:
+          "Great Progress!",
+
         description:
           "You're halfway there. Keep building momentum.",
+
       };
 
     }
@@ -279,18 +379,26 @@ function Dashboard() {
     ) {
 
       return {
-        title: "Good Start!",
+
+        title:
+          "Good Start!",
+
         description:
           "You've started your day. Keep going and stay consistent.",
+
       };
 
     }
 
 
     return {
-      title: "Ready to Start?",
+
+      title:
+        "Ready to Start?",
+
       description:
         "Complete your meals, workout and planner tasks to build your progress.",
+
     };
 
   }
@@ -351,6 +459,45 @@ function Dashboard() {
         day: "numeric",
       }
     );
+
+
+  /*
+   * =========================================================
+   * LOADING STATE
+   * =========================================================
+   */
+
+  if (loading) {
+
+    return (
+
+      <main className="dashboard-page">
+
+        <div className="dashboard-header">
+
+          <div>
+
+            <span className="dashboard-eyebrow">
+              FITSTATS DASHBOARD
+            </span>
+
+            <h1>
+              Loading your dashboard...
+            </h1>
+
+            <p>
+              Fetching your latest fitness progress.
+            </p>
+
+          </div>
+
+        </div>
+
+      </main>
+
+    );
+
+  }
 
 
   /*
@@ -492,7 +639,9 @@ function Dashboard() {
             <strong>
 
               {calculatorResults?.bmi
-                ? calculatorResults.bmi.toFixed(1)
+                ? Number(
+                    calculatorResults.bmi
+                  ).toFixed(1)
                 : "--"}
 
             </strong>
@@ -1162,6 +1311,7 @@ function Dashboard() {
 
             </Link>
 
+
           </div>
 
         </article>
@@ -1171,7 +1321,7 @@ function Dashboard() {
 
 
       {/* =================================================
-          AI COACH
+          SENSEI
       ================================================= */}
 
       <section className="dashboard-ai-card">
@@ -1184,7 +1334,7 @@ function Dashboard() {
         <div className="dashboard-ai-content">
 
           <span>
-            FITSTATS AI COACH
+            FITSTATS SENSEI
           </span>
 
 
@@ -1207,7 +1357,7 @@ function Dashboard() {
           to="/ai"
           className="dashboard-ai-button"
         >
-          Open AI Coach
+          Open Sensei
         </Link>
 
       </section>
