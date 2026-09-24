@@ -17,6 +17,11 @@ import {
 } from "./plannerStorage";
 
 
+const API_BASE_URL =
+  import.meta.env.VITE_API_URL ||
+  "http://localhost:5000";
+
+
 function Calendar() {
 
   const today = new Date();
@@ -215,7 +220,7 @@ function Calendar() {
 
       const response =
         await fetch(
-          "http://localhost:5000/api/planner",
+          `${API_BASE_URL}/api/planner`,
           {
             method: "POST",
             headers: {
@@ -271,6 +276,7 @@ function Calendar() {
         error
       );
 
+
       return null;
 
     }
@@ -297,7 +303,7 @@ function Calendar() {
 
       const response =
         await fetch(
-          `http://localhost:5000/api/planner/${task.dbId}`,
+          `${API_BASE_URL}/api/planner/${task.dbId}`,
           {
             method: "PUT",
             headers: {
@@ -368,7 +374,7 @@ function Calendar() {
 
       const response =
         await fetch(
-          `http://localhost:5000/api/planner/${task.dbId}`,
+          `${API_BASE_URL}/api/planner/${task.dbId}`,
           {
             method: "DELETE",
           }

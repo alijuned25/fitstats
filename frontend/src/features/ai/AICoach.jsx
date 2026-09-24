@@ -4,6 +4,10 @@ import ReactMarkdown from "react-markdown";
 import dietData from "../diet/dietData";
 import workoutPlans from "../workout/workoutData";
 
+const API_BASE_URL =
+  import.meta.env.VITE_API_URL ||
+  "http://localhost:5000";
+
 
 function AICoach() {
 
@@ -737,7 +741,7 @@ function AICoach() {
 
       const response =
         await fetch(
-          "http://localhost:5000/api/ai/chat",
+          `${API_BASE_URL}/api/ai/chat`,
           {
             method:
               "POST",

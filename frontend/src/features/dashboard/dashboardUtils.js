@@ -7,6 +7,11 @@ import {
 import workoutPlans from "../workout/workoutData";
 
 
+const API_BASE_URL =
+  import.meta.env.VITE_API_URL ||
+  "http://localhost:5000";
+
+
 /*
  * =========================================================
  * GET USER ID
@@ -445,7 +450,7 @@ export async function getDashboardWorkout() {
 
     const response =
       await fetch(
-        `http://localhost:5000/api/workout/${getUserId()}`
+        `${API_BASE_URL}/api/workout/${getUserId()}`
       );
 
 
@@ -711,7 +716,7 @@ export async function getDashboardPlanner() {
 
     const response =
       await fetch(
-        `http://localhost:5000/api/planner/${getUserId()}`
+        `${API_BASE_URL}/api/planner/${getUserId()}`
       );
 
 

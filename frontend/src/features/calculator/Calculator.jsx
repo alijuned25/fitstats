@@ -12,6 +12,11 @@ import {
 } from "./calculatorUtils";
 
 
+const API_BASE_URL =
+  import.meta.env.VITE_API_URL ||
+  "http://localhost:5000";
+
+
 function Calculator() {
 
   const [formData, setFormData] = useState({
@@ -129,7 +134,7 @@ function Calculator() {
 
       const response =
         await fetch(
-          "http://localhost:5000/api/profile",
+          `${API_BASE_URL}/api/profile`,
           {
             method: "POST",
 

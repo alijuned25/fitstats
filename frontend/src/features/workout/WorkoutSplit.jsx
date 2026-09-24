@@ -9,6 +9,11 @@ import {
 } from "./workoutUtils";
 
 
+const API_BASE_URL =
+  import.meta.env.VITE_API_URL ||
+  "http://localhost:5000";
+
+
 function WorkoutSplit({
   selectedSplit,
 }) {
@@ -79,6 +84,7 @@ function WorkoutSplit({
       ...currentProgress,
 
       selectedSplit,
+
     });
 
   }, [selectedSplit]);
@@ -110,7 +116,7 @@ function WorkoutSplit({
 
       const response =
         await fetch(
-          "http://localhost:5000/api/workout",
+          `${API_BASE_URL}/api/workout`,
           {
             method: "POST",
 
