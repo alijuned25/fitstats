@@ -17,14 +17,41 @@ const PORT = process.env.PORT || 5000;
 
 
 /* ==========================================
-   MIDDLEWARE
+   CORS CONFIGURATION
    ========================================== */
+
+const allowedOrigins = [
+  "http://localhost:5173",
+  process.env.FRONTEND_URL,
+].filter(Boolean);
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: (origin, callback) => {
+
+      /*
+       * Allow requests without an Origin header.
+       * This includes tools such as curl/Postman.
+       */
+      if (!origin) {
+        return callback(null, true);
+      }
+
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      return callback(
+        new Error("Not allowed by CORS")
+      );
+    },
   })
 );
+
+
+/* ==========================================
+   MIDDLEWARE
+   ========================================== */
 
 app.use(express.json());
 
@@ -34,10 +61,12 @@ app.use(express.json());
    ========================================== */
 
 app.get("/api/health", (req, res) => {
+
   res.json({
     success: true,
     message: "FitStats backend is running.",
   });
+
 });
 
 
@@ -46,8 +75,11 @@ app.get("/api/health", (req, res) => {
    ========================================== */
 
 app.get("/api/db/health", async (req, res) => {
+
   try {
-    const connection = await db.getConnection();
+
+    const connection =
+      await db.getConnection();
 
     await connection.query("SELECT 1");
 
@@ -59,13 +91,20 @@ app.get("/api/db/health", async (req, res) => {
     });
 
   } catch (error) {
-    console.error("MySQL connection error:", error);
+
+    console.error(
+      "MySQL connection error:",
+      error
+    );
 
     res.status(500).json({
       success: false,
-      message: "Unable to connect to MySQL.",
+      message:
+        "Unable to connect to MySQL.",
     });
+
   }
+
 });
 
 
@@ -73,23 +112,44 @@ app.get("/api/db/health", async (req, res) => {
    API ROUTES
    ========================================== */
 
-app.use("/api/ai", aiRoutes);
+app.use(
+  "/api/ai",
+  aiRoutes
+);
 
-app.use("/api/profile", profileRoutes);
+app.use(
+  "/api/profile",
+  profileRoutes
+);
 
-app.use("/api/diet", dietRoutes);
+app.use(
+  "/api/diet",
+  dietRoutes
+);
 
-app.use("/api/workout", workoutRoutes);
+app.use(
+  "/api/workout",
+  workoutRoutes
+);
 
-app.use("/api/planner", plannerRoutes);
+app.use(
+  "/api/planner",
+  plannerRoutes
+);
 
 
 /* ==========================================
    START SERVER
    ========================================== */
 
-app.listen(PORT, () => {
-  console.log(
-    `FitStats backend running on http://localhost:${PORT}`
-  );
-});
+app.listen(
+  PORT,
+  "0.0.0.0",
+  () => {
+
+    console.log(
+      `FitStats backend running on port ${PORT}`
+    );
+
+  }
+);
